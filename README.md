@@ -110,7 +110,7 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
 
 ## run steps 11-16 for separate datasets (also the nucleotide diversity output from populations)
 
-# NB Bad apple 2021 Jose Cerca paper suggests running populations separately (with dif pop maps for region in my case) and then indentify individuals missing a lot of data first, then re-running populations with how datatset WITHOUT those bad apples in the pop map
+# NB Bad apple 2021 Jose Cerca paper suggests running populations separately (with dif pop maps for region in my case) and then indentify individuals missing a lot of data first, then re-running populations for all regions at once but WITHOUT those bad apples in the pop map
 
 
 
