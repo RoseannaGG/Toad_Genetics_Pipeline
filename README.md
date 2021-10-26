@@ -42,8 +42,12 @@ process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/N
 
 NB - run steps 7-9 on small test dataset first and play with values of M and n to see which to choose. As per Rochette and Catchan paper
 
-### 9b.  nucleotide diverstiy 
+### 9b.  nucleotide diversity (pi)
   - run populations with some good filtering to get that has had some filtering
+  - export sum stats summary file
+  - manipulate in R to make plot
+  - might also make P value? or new version of stacks gets a p value for this
+  - include whatever samples (in R) for whatever regions you want
 
 
 
@@ -56,6 +60,10 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
 
   VCF tools
   
+  
+  ## 10b. Export vcf file and missing individual files to desktop
+  
+  
   ### Fitler samples over 0.6 max obs het - at regional level
 
   R - hierfstat
@@ -65,6 +73,8 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
   R SNPrelate OR COLONY
   
   ### Fitler SNPs out of HWE
+  
+  ## ANALYSIS ON WHOLE DATASET
 
 ## 11. Plot PCA of filtered snps
 
@@ -76,11 +86,25 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
 
 ## 13. Isolation-by-distance
 
+- make sure have the correct lat longs - there was a version that didn't have them correct
+- make sure use the right dist calc - double check dist matric mataches real world
+
 ## 14. Structure
+
+- export structure file in R 
 
 ## 15. FIS
 
 ## 16. Expected het
+
+
+  ## ANALYSIS ON SEPERATE DATASETS - E.G. Haida Gwaii and Vancouver Island
+  
+  ### Separate datasets in R - i.e. fully filtered dataset at the end of step 10.
+  
+  - seppop() function adegenet 
+
+## run steps 11-16 for separate datasets (also the nucleotide diversity output from populations)
 
 
 
