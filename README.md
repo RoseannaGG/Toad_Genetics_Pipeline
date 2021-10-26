@@ -94,8 +94,11 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
 - export structure file from R 
 - test structure locally
 - upload to server and run
-- upload output to structure harvester
-- 
+- upload output to structure harvester to get optimal K value 
+      http://taylor0.biology.ucla.edu/structureHarvester/
+- next could do CLUMPP and DISTRUCT locally to get plots (downlaod from standford)
+- OR take strucutre outputs and put them in a webstie to get plots for a range of K values - and then clip those pdfs
+       http://clumpak.tau.ac.il/index.html
 
 ## 15. FIS
 
