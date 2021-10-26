@@ -40,6 +40,8 @@ process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/N
 - take first snp in locus (locus =  DNA between cut sites)
 - - run with various dif filtering criteria
 
+NB - run steps 7-9 on small test dataset first and play with values of M and n to see which to choose. As per Rochette and Catchan paper
+
 ### 9b.  nucleotide diverstiy 
   - run populations with some good filtering to get that has had some filtering
 
