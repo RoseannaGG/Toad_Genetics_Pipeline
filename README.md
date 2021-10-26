@@ -74,7 +74,11 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
   
   ### Fitler SNPs out of HWE
   
+  - Across whole dataset
+  
   ## ANALYSIS ON WHOLE DATASET
+  
+  NB it is SUPER important to keep the popmap txt file with the samples in the same order as the stacks pipeline used for all the analyses. This means whenever you need to amke changes to the pop map file (e.g. removing individuals) you MUST EDIT it in R and not excel so that you don't risk re-ordering the names.
 
 ## 11. Plot PCA of filtered snps
 
