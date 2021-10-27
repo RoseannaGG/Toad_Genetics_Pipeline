@@ -30,6 +30,7 @@ java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar SE -threads 4 -trimlog /scratc
 
 process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/NS.1470.002.D707.Hamelin_202010_plate__3_R1.fastq.gz -2 /scratch/roseanna/Trimmed_reverseplates/NS.1470.002.D707.Hamelin_202010_plate__3_R2.trimmed.fastq.gz -b /scratch/roseanna/Demultiplexing_stacks/stacks_barcode_D707.txt -o /scratch/roseanna/Demultiplexing_stacks/D707_norenz2_trimR2 -w 0.25 -s 20 -y gzfastq --inline_null --renz_1 sbfI --quality --rescue --barcode_dist_1 1 -D &> process_radtags_standoutputerror_D707_norenz2_trimR2.oe
 
+- download process radtags.oe files
 -copy all .fq.gz files into one single folder (all the .rem.1, .1., .2, .rem.2 )
 
 
@@ -37,7 +38,12 @@ process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/N
 
 ## 7. Align the reads - stacks/ustacks/cstacks
 
+-download logs
+
 ## 8. Build loci - stacks/gstacks
+
+-download logs and log distribs 
+-see if can backup gstacks files on project server?
 
 ## 9. Call snps - stacks/populations
 - take first snp in locus (locus =  DNA between cut sites)
