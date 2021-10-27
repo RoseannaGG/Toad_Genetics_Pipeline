@@ -38,7 +38,8 @@ process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/N
 
 ## 9. Call snps - stacks/populations
 - take first snp in locus (locus =  DNA between cut sites)
-- - run with various dif filtering criteria
+- run with pop map that does not include experiment pond samples R01-SS-EF - beacuse I have fawn lake in there as well
+- run with various dif filtering criteria
 
 NB - run steps 7-9 on small test dataset first and play with values of M and n to see which to choose. As per Rochette and Catchan paper
 
