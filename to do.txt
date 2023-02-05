@@ -1,6 +1,6 @@
 ## to do
 
-# tranfer 50x files from hard drive to compute canada server
+# tranfer files from hard drive to compute canada server using globus
 
 # generate md5sum for all 50x files:
 a) on server
