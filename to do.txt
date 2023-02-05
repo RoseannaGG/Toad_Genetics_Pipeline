@@ -1,8 +1,8 @@
 ## to do
 
-# tranfer files from hard drive to compute canada server using globus
+# tranfer raw gbs files from hard drive to compute canada server using globus
 
-# generate md5sum for all 50x files:
+# generate md5sum for all files:
 a) on server
 b) on hard drive
 
@@ -14,7 +14,8 @@ b) on hard drive
 
 # upload to server
 
-# run md5sum
+# run md5sum on genome on server
+
 
 
 
