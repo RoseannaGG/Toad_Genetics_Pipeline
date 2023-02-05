@@ -53,7 +53,7 @@ b) on hard drive
 
 ### when lane 3 samples arrive
 
-# fastqc plates
+# fastqc plates using interactive node salloc
 
 # create 6 trim + demuliplex scripts for lane 3 plates
 
