@@ -18,29 +18,50 @@ b) on hard drive
 
 
 
-
 ####### issues to resolve
 
 # check lane 1 working with Pstl 
 
-# check lane 1 working with anaxyrus boreas ref
+# check lane 1 working with anaxyrus boreas ref (YES)
 
-# check lane 1 working with PstI and anaxyrus boreas
-
-# sort lane 2 process_radtags error
-
-# demultiplex lane 1 and 2
-
-# align lane 1 and 2
+# check lane 1 working with PstI and anaxyrus boreas -(12 sample test D701 - CURRENTLY RUNNING)
 
 
-# create barcode files for lane 3 plates (6 files)
-# create pop map file for all samples (lane 1-3)
+
+# sort lane 2 process_radtags error (YES)
+
+# trim and demultiplex one plate lane 2 (B503 - CURRENTLY RUNNING
+
+# copy demultiplexed forward reads from lane 2 plate to Demultiplexing_stacks/lane1_lane2_lane3
+
+# align that one plate from lane 2 (B503) - SEND TO MAIN FOLDER SCRATCH alignments - ANBO_refassembly_HGthesis_lane1_lane2_lane3
+
+
+# trim and demultiplex ALL lane 1 and 2 plates 
+
+# copy all FORWARD DEMULIPLEXED reads into one folder "lane1_lane2_lane3" - within Demultiplexing_stacks
+
+# align lane 1 and 2 to toad genome - SEND TO MAIN FOLDER SCRATCH - ANBO_refassembly_HGthesis_lane1_lane2_lane3
+
+
+
+
+# create barcode files for lane 3 plates (6 files) - (YES)
+
+# create pop map file for all samples (lane 1-3) (YES)
+
+
+### when lane 3 samples arrive
+
+# fastqc plates
+
 # create 6 trim + demuliplex scripts for lane 3 plates
 
-# demultiplex lane 3 - one plate test
+# demultiplex lane 3 - one plate test - copy demultiplexed forward reads to Demultiplexing_stacks/lane1_lane2_lane3
 
-# align lane 3 - one plate test
+
+# align lane 3 - one plate test - SEND TO MAIN FOLDER SCRATCH alignments - ANBO_refassembly_HGthesis_lane1_lane2_lane3
+
 
 # check that compute canada has uploaded stacks 2.62
 
@@ -53,3 +74,12 @@ b) on hard drive
 # check missing data with different settings
 
 # download vcf files and do analysis
+
+
+
+
+
+
+
+
+
