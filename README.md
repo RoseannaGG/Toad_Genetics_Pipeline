@@ -44,7 +44,13 @@ md5sum NS.2053.003.B716---D502.Hamelin__20230109-Plate-2_R2.fastq.gz
 
 ## 3. FastQC plates
 
+using interactive node
+
+salloc --time=01:00:00 --gres=gpu:1 --cpus-per-task=8 --mem=1000M --ntasks=1 --account=def-saitken
+
 Fine except low quality score for reverse read cut site
+
+module load fastqc
 
 fastqc NS.1760.001.B711---D503.Hamelin_202110_plate2_R1.fastq.gz
 
@@ -54,6 +60,8 @@ zcat NS.1760.001.B711---D503.Hamelin_202110_plate2_R1.fastq.gz | head -n 20
 
 ## 4. Trim reverse reads
 
+using slurm
+
 - Take out the restriction enzyme cut site on reverse read
 
 java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar SE -threads 4 -trimlog /scratch/roseanna/Trimmed_reverseplates/D709_P9_R2_trimmed_log.txt /project/def-saitken/roseanna/rawreads_md5checked_feb272021/NS.1470.002.D709.Hamelin_202010_plate__5_R2.fastq.gz /scratch/roseanna/Trimmed_reverseplates/NS.1470.002.D709.Hamelin_202010_plate__5_R2.trimmed.fastq.gz HEADCROP:3
@@ -61,6 +69,8 @@ java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar SE -threads 4 -trimlog /scratc
 
 
 ## 5. Demultiplex/clean plates - stacks/process_radtags
+
+using slurm
 
 - discards reads with low quality (below 20) in sliding window of 25% of read length
 - make sure stacks_barcode file is unix format
@@ -74,7 +84,14 @@ process_radtags -1 /home/roseanna/scratch/rawreads_feb4th2023/NS.1760.001.B712--
 
 ## 6. FastQC samples
 
+ module load fastqc
+
+fastqc file
+
 ## 7. Align the reads - BWA
+
+using slurm
+
 
 a)
 -defintely use multiple cpus - speeds it up a lot
@@ -84,7 +101,9 @@ bwa index -p /scratch/roseanna/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas $g
 -download logs
 -check if all bam files have data in them
 
-# b) check alignment using samtools
+### b) check alignment using samtools
+
+module load samtools/1.16.1 StdEnv/2020
 
 x) samtools view -q 30 -c R02-SC-IN-01.bam # counts reads mapped with over 30 quality
 y) samtools flagstat R02-SC-IN-01.bam -O tsv # gives summary of total numner of reads, % mapped etc. 
@@ -99,6 +118,9 @@ gstacks -I $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignments_mapq20/ -
 -see if can backup gstacks files on project server?
 
 ## 9. Call snps - stacks/populations
+
+using slurm
+
 - take first snp in locus (locus =  DNA between cut sites)
 - run with pop map that does not include experiment pond samples R01-SS-EF - beacuse I have fawn lake in there as well
 - run with various dif filtering criteria
