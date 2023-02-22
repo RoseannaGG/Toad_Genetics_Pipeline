@@ -1,32 +1,34 @@
 # Toad Genetics Pipeline Oct 2021
 
 ## Data info
-We have GBS double-digested (Sbfl and PstI), paired-end (2x101bp), Illumina Novaseq data with an individual level barcode on the forward read only. The data provided from the sequencing platform came back to us as demultiplexed plates with the Illumina adapter sequences and plate barcodes trimmed off (just leaving the individual barcode and cutsite on the forward read, and just the cutsite on the reverse read). We had nine plates - equating to 1370 samples. DNA extractions done at UBC Hamelin lab, library prep done at Laval, sequencing done at Genome QC. Research funded by National Geographic, BC Ministry of Forests and the UBC Public Scholar Intiative. RGGs stipend provided by Govt. Canada Vanier Scholarship and BC Ministry of Forests. 
+We have GBS double-digested (Sbfl and PstI), paired-end (2x101bp), Illumina Novaseq data with an individual level barcode on the forward read only. The data provided from the sequencing platform came back to us as demultiplexed plates with the Illumina adapter sequences and plate barcodes trimmed off (just leaving the individual barcode and cutsite on the forward read, and just the cutsite on the reverse read). This analysis started with 1370 samples, and 47 breeding sites - from the lower mainland, Vancouver Island, Haida Gwaii and northwest BC. DNA extractions done at UBC Hamelin lab, library prep done at Laval, sequencing done at Genome QC. Research funded by National Geographic, BC Ministry of Forests and the UBC Public Scholar Intiative. RGGs stipend provided by Govt. Canada Vanier Scholarship and BC Ministry of Forests. 
 
 ## 1. Create directories on server
+
+mkdir gstacks etc
 
 ## 2. Upload and check files on server 
 
 A) upload
-   - raw reads forwad and reverse plates .gz files 
-    - stacks barcode files 
+   - raw reads of the forward and reverse plates - fastq.gz files 
+   - Anaxyrus boreas reference genome .fasta file
+   - stacks barcode files 
    - pop.map .tsv  
    - job scripts 
     
       rsync -zv /drives/f/GBS_data_03_02_21/Lane2_GBSdata_2022/Trim_demultiplex_Oct2022/*.txt /drives/f/GBS_data_03_02_21/Lane2_GBSdata_2022/Trim_demultiplex_Oct2022/*.sh roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Demultiplexing_stacks/  --progress
    
    
-   B) do md5sum check before downloading from nanuq and also upon download to laptop and after uploaded to server 
+   B) do md5sum check before downloading raw reads from nanuq and also upon download to laptop and after uploaded to server 
 
-a) on server
 
-md5sum NS.2053.003.B716---D502.Hamelin__20230109-Plate-2_R2.fastq.gz
-
-b) on hard drive (using windows commander)
+i) on hard drive (using windows commander)
 
 CertUtil -hashfile "I:\Lane_3_GBS_data_13_02_23\NS.2053.003.B716---D502.Hamelin__20230109-Plate-2_R2.fastq.gz" MD5z
 
+ii) on server
 
+md5sum NS.2053.003.B716---D502.Hamelin__20230109-Plate-2_R2.fastq.gz
 
 
 ## 3. FastQC plates
