@@ -1,7 +1,7 @@
 # Toad Genetics Pipeline Oct 2021
 
 ## Data info
-We have GBS double-digested (Sbfl and Mspl), paired-end (2x101bp), Illumina Novaseq data with an individual level barcode on the forward read only. The data provided from the sequencing platform came back to us as demultiplexed plates with the Illumina adapter sequences and plate barcodes trimmed off (just leaving the individual barcode and cutsite on the forward read, and just the cutsite on the reverse read). We had nine plates - equating to 835 samples. DNA extractions done at UBC Hamelin lab, library prep done at Laval, sequencing done at Genome QC. Research funded by National Geographic, BC Ministry of Forests and the UBC Public Scholar Intiative. RGGs stipend provided by Govt. Canada Vanier Scholarship and BC Ministry of Forests. 
+We have GBS double-digested (Sbfl and PstI), paired-end (2x101bp), Illumina Novaseq data with an individual level barcode on the forward read only. The data provided from the sequencing platform came back to us as demultiplexed plates with the Illumina adapter sequences and plate barcodes trimmed off (just leaving the individual barcode and cutsite on the forward read, and just the cutsite on the reverse read). We had nine plates - equating to 1370 samples. DNA extractions done at UBC Hamelin lab, library prep done at Laval, sequencing done at Genome QC. Research funded by National Geographic, BC Ministry of Forests and the UBC Public Scholar Intiative. RGGs stipend provided by Govt. Canada Vanier Scholarship and BC Ministry of Forests. 
 
 ## 1. Create directories on server
 
