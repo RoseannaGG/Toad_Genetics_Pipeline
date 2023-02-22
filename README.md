@@ -28,7 +28,7 @@ java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar SE -threads 4 -trimlog /scratc
 - discards reads with low quality (below 20) in sliding window of 25% of read length
 - make sure stacks_barcode file is unix format
 
-process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/NS.1470.002.D707.Hamelin_202010_plate__3_R1.fastq.gz -2 /scratch/roseanna/Trimmed_reverseplates/NS.1470.002.D707.Hamelin_202010_plate__3_R2.trimmed.fastq.gz -b /scratch/roseanna/Demultiplexing_stacks/stacks_barcode_D707.txt -o /scratch/roseanna/Demultiplexing_stacks/D707_norenz2_trimR2 -w 0.25 -s 20 -y gzfastq --inline_null --renz_1 sbfI --quality --rescue --barcode_dist_1 1 -D &> process_radtags_standoutputerror_D707_norenz2_trimR2.oe
+process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/NS.1470.002.D707.Hamelin_202010_plate__3_R1.fastq.gz -2 /scratch/roseanna/Trimmed_reverseplates/NS.1470.002.D707.Hamelin_202010_plate__3_R2.trimmed.fastq.gz -b /scratch/roseanna/Demultiplexing_stacks/stacks_barcode_D707.txt -o /scratch/roseanna/Demultiplexing_stacks/D707_norenz2_trimR2 -w 0.25 -s 20 -y gzfastq --inline_null --renz_1 sbfI --quality --rescue --barcode-dist-1 1 -D &> process_radtags_standoutputerror_D707_norenz2_trimR2.oe
 
 - download process radtags.oe files
 -copy all .fq.gz files into one single folder (all the .rem.1, .1., .2, .rem.2 )
@@ -56,6 +56,22 @@ gstacks -I $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignments_mapq20/ -
 - run with various dif filtering criteria
 
 NB - run steps 7-9 on small test dataset first and play with values of M and n to see which to choose. As per Rochette and Catchan paper
+
+Examples:
+echo “Starting populations_ANBOref_r60_minmaf0.01_maxhet0.6_writesinglesnp at: `date`”
+
+populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/ -M $src/info/Pop_map_HGthesis_lane1_allexcptexperimnt_lane2_LM_VanIs_lane3_NW_siteID.tsv -O $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_minmaf0.01_maxhet0.6_writesinglesnp/ --max-obs-het 0.6 --min-samples-per-pop 0.6 --min-maf 0.01 --write-single-snp --fstats --hwe --smooth --smooth-fstats --vcf --vcf-all --plink --structure --genepop --treemix --verbose -t $cpu
+
+
+echo “Starting populations_ANBOref_r60_R60pctoverall_minmaf0.01_maxhet0.6_writesinglesnp at: `date`”
+
+populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/ -M $src/info/Pop_map_HGthesis_lane1_allexcptexperimnt_lane2_LM_VanIs_lane3_NW_siteID.tsv -O $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_minmaf0.01_maxhet0.6_writesinglesnp/ --max-obs-het 0.6 --min-samples-overall 0.6 --min-samples-per-pop 0.6 --min-maf 0.01 --write-single-snp --fstats --hwe --smooth --smooth-fstats --vcf --vcf-all --plink --structure --genepop --treemix --verbose -t $cpu
+
+echo “Starting populations_ANBOref_R60pctoverall_minmaf0.01_maxhet0.6_writesinglesnp at: `date`”
+
+populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/ -M $src/info/Pop_map_HGthesis_lane1_allexcptexperimnt_lane2_LM_VanIs_lane3_NW_siteID.tsv -O $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_R60pctoverall_minmaf0.01_maxhet0.6_writesinglesnp/ --max-obs-het 0.6 --min-samples-overall 0.6 --min-maf 0.01 --write-single-snp --fstats --hwe --smooth --smooth-fstats --vcf --vcf-all --plink --structure --genepop --treemix --verbose -t $cpu
+
+
 
 ### 9b.  nucleotide diversity (pi)
   - run populations with some good filtering to get that has had some filtering
