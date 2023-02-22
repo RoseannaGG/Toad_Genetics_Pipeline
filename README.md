@@ -76,12 +76,20 @@ process_radtags -1 /home/roseanna/scratch/rawreads_feb4th2023/NS.1760.001.B712--
 
 ## 7. Align the reads - BWA
 
+a)
 -defintely use multiple cpus - speeds it up a lot
 
 bwa index -p /scratch/roseanna/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas $genome_fa &> /scratch/roseanna/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas_genome_index.oe
 
 -download logs
 -check if all bam files have data in them
+
+# b) check alignment using samtools
+
+x) samtools view -q 30 -c R02-SC-IN-01.bam # counts reads mapped with over 30 quality
+y) samtools flagstat R02-SC-IN-01.bam -O tsv # gives summary of total numner of reads, % mapped etc. 
+
+Divide (x) by (y) to get % mapped reads over 30 quality
 
 ## 8. Build loci - stacks/gstacks
 
