@@ -36,11 +36,16 @@ process_radtags -1 /project/def-saitken/roseanna/rawreads_md5checked_feb272021/N
 
 ## 6. FastQC samples
 
-## 7. Align the reads - stacks/ustacks/cstacks
+## 7. Align the reads - BWA
+
+bwa index -p /scratch/roseanna/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas $genome_fa &> /scratch/roseanna/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas_genome_index.oe
 
 -download logs
+-check if all bam files have data in them
 
 ## 8. Build loci - stacks/gstacks
+
+gstacks -I $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignments_mapq20/ -M $src/info/Pop_map_HGthesis_lane1_allexcptexperimnt_lane2_LM_VanIs_lane3_NW_siteID.tsv -O $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/ --min-mapq 20 -t $cpu
 
 -download logs and log distribs 
 -see if can backup gstacks files on project server?
@@ -58,8 +63,7 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
   - manipulate in R to make plot
   - might also make P value? or new version of stacks gets a p value for this
   - include whatever samples (in R) for whatever regions you want
-
-
+  - download vcfall file for this
 
 ## 10. Filtering - O'Leary paper
   ### Filter biallelic, mac=3, min depth =5, mean min depth =5, GQ =20, rm indels
@@ -88,17 +92,22 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
   
   ## ANALYSIS ON WHOLE DATASET
   
-  NB it is SUPER important to keep the popmap txt file with the samples in the same order as the stacks pipeline used for all the analyses. This means whenever you need to amke changes to the pop map file (e.g. removing individuals) you MUST EDIT it in R and not excel so that you don't risk re-ordering the names.
+  NB it is SUPER important to keep the popmap txt file with the samples in the same order as the stacks pipeline (popmap.tsv) used for all the analyses. This means whenever you need to amke changes to the pop map file (e.g. removing individuals) you MUST EDIT it in R and not excel so that you don't risk re-ordering the names.
 
 ## 11. Plot PCA of filtered snps
 
+R
 
 ## 12. FST comparison 
+
+R 
 
 - between Haida Gwaii and Mainland & Vancouver Island
 - within Haida Gwaii
 
 ## 13. Isolation-by-distance
+
+R 
 
 - make sure have the correct lat longs - there was a version that didn't have them correct
 - make sure use the right dist calc - double check dist matric mataches real world
@@ -113,11 +122,16 @@ NB - run steps 7-9 on small test dataset first and play with values of M and n t
 - next could do CLUMPP and DISTRUCT locally to get plots (downlaod from standford)
 - OR take strucutre outputs and put them in a webstie to get plots for a range of K values - and then clip those pdfs
        http://clumpak.tau.ac.il/index.html
+       
+ NB structure runs x10 faster if the directory in the command is written a certain way - see structure instructions
 
 ## 15. FIS
 
+R
+
 ## 16. Expected het
 
+R
 
   ## ANALYSIS ON SEPERATE DATASETS - E.G. Haida Gwaii and Vancouver Island
   
