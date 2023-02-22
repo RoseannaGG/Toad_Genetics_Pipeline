@@ -5,15 +5,39 @@ We have GBS double-digested (Sbfl and PstI), paired-end (2x101bp), Illumina Nova
 
 ## 1. Create directories on server
 
-## 2. Upload files to server  
-   - raw reads forwad and reverse plates .gz files - do md5sum check before downloading from nanuq and also upon download to laptop and after uploaded to server 
-   - stacks barcode files 
+## 2. Upload and check files on server 
+
+A) upload
+   - raw reads forwad and reverse plates .gz files 
+    - stacks barcode files 
    - pop.map .tsv  
    - job scripts 
+    
+      rsync -zv /drives/f/GBS_data_03_02_21/Lane2_GBSdata_2022/Trim_demultiplex_Oct2022/*.txt /drives/f/GBS_data_03_02_21/Lane2_GBSdata_2022/Trim_demultiplex_Oct2022/*.sh roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Demultiplexing_stacks/  --progress
+   
+   
+   B) do md5sum check before downloading from nanuq and also upon download to laptop and after uploaded to server 
+
+a) on server
+
+md5sum NS.2053.003.B716---D502.Hamelin__20230109-Plate-2_R2.fastq.gz
+
+b) on hard drive (using windows commander)
+
+CertUtil -hashfile "I:\Lane_3_GBS_data_13_02_23\NS.2053.003.B716---D502.Hamelin__20230109-Plate-2_R2.fastq.gz" MD5z
+
+
+
 
 ## 3. FastQC plates
 
 Fine except low quality score for reverse read cut site
+
+fastqc NS.1760.001.B711---D503.Hamelin_202110_plate2_R1.fastq.gz
+
+investigate files
+zcat NS.1760.001.B711---D503.Hamelin_202110_plate2_R1.fastq.gz | head -n 20
+
 
 ## 4. Trim reverse reads
 
@@ -157,7 +181,7 @@ R
 
 ## run steps 11-16 for separate datasets (also the nucleotide diversity output from populations)
 
-# NB Bad apple 2021 Jose Cerca paper suggests running populations separately (with dif pop maps for region in my case) and then indentify individuals missing a lot of data first, then re-running populations for all regions at once but WITHOUT those bad apples in the pop map
+NB Bad apple 2021 Jose Cerca paper suggests running populations separately (with dif pop maps for region in my case) and then indentify individuals missing a lot of data first, then re-running populations for all regions at once but WITHOUT those bad apples in the pop map
 
 
 
