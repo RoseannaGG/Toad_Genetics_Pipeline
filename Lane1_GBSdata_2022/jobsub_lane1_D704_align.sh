@@ -3,8 +3,8 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=24
-#SBATCH --time=72:00:00
-#SBATCH --mem=50000
+#SBATCH --time=24:00:00
+#SBATCH --mem=80000
 #SBATCH --job-name=jobsub_lane1_D704_align
 #SBATCH --mail-user=roseanna.gamlen.greene@gmail.com
 #SBATCH --mail-type=ALL
@@ -12,7 +12,7 @@
 
 src=/scratch/roseanna/
 bwa_db=$src/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas
-cpu=48
+cpu=24
 
 files="R02-SS-LT-19
 R02-SS-LT-20
@@ -117,7 +117,7 @@ echo “Starting alignment at: `date`”
 
 
 module load bwa/0.7.17
-module load samtools/1.11
+module load samtools/1.16.1
 
 
 #
@@ -125,9 +125,9 @@ module load samtools/1.11
 #
 for sample in $files;
 do
-    bwa mem -M -t $cpu $bwa_db $src/Demultiplexing_stacks/lane1_lane2_lane3/${sample}.1.fq.gz $src/Demultiplexing_stacks/lane1_lane2_lane3/${sample}.2.fq.gz 2> $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/logs/bwa_lane1_D704.err|
+    bwa mem -M -t $cpu $bwa_db $src/Demultiplexing_stacks/D704_norenz2_trimR2/${sample}.1.fq.gz $src/Demultiplexing_stacks/D704_norenz2_trimR2/${sample}.2.fq.gz 2> $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/logs/bwa_lane1_D704.err|
       samtools view -b -q 20|
-      samtools sort --threads $cpu > $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignmentsmapq20/${sample}.bam;
+      samtools sort --threads $cpu > $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignments_mapq20/${sample}.bam;
 done
 
 echo “Job alignment finished with exit code $? at: `date`”
