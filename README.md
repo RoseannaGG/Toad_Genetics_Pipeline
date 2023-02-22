@@ -55,6 +55,7 @@ java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar SE -threads 4 -trimlog /scratc
 
 - discards reads with low quality (below 20) in sliding window of 25% of read length
 - make sure stacks_barcode file is unix format
+- can't use multiple cpus
 
 process_radtags -1 /home/roseanna/scratch/rawreads_feb4th2023/NS.1760.001.B712---B501.Hamelin_202110_plate4_R1.fastq.gz -2 /scratch/roseanna/Trimmed_reverseplates/NS.1760.001.B712---B501.Hamelin_202110_plate4_R2.trimmed.fastq.gz -b /scratch/roseanna/Demultiplexing_stacks/stacks_barcode_B501.txt -o /scratch/roseanna/Demultiplexing_stacks/B501_norenz2_trimR2 -w 0.25 -s 20 -y gzfastq --inline_null --renz_1 pstI --quality --rescue --barcode-dist-1 1 --threads $cpu -D &> process_radtags_standoutputerror_B501_norenz2_trimR2.oe 
 
@@ -65,6 +66,8 @@ process_radtags -1 /home/roseanna/scratch/rawreads_feb4th2023/NS.1760.001.B712--
 ## 6. FastQC samples
 
 ## 7. Align the reads - BWA
+
+-defintely use multiple cpus - speeds it up a lot
 
 bwa index -p /scratch/roseanna/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas $genome_fa &> /scratch/roseanna/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas_genome_index.oe
 
