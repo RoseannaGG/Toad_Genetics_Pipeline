@@ -44,7 +44,7 @@ md5sum NS.2053.003.B716---D502.Hamelin__20230109-Plate-2_R2.fastq.gz
 
 ## 3. FastQC plates
 
-using interactive node
+using interactive node for one plate, or do to all, create slurm script
 
 salloc --time=01:00:00 --gres=gpu:1 --cpus-per-task=8 --mem=1000M --ntasks=1 --account=def-saitken
 
@@ -112,6 +112,8 @@ y) samtools flagstat R02-SC-IN-01.bam -O tsv # gives summary of total numner of 
 Divide (x) by (y) to get % mapped reads over 30 quality
 
 ## 8. Build loci - stacks/gstacks
+
+using slurm
 
 gstacks -I $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignments_mapq20/ -M $src/info/Pop_map_HGthesis_lane1_allexcptexperimnt_lane2_LM_VanIs_lane3_NW_siteID.tsv -O $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/ --min-mapq 20 -t $cpu
 
