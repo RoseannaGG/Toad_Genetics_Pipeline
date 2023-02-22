@@ -3,22 +3,22 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=24
-#SBATCH --time=72:00:00
-#SBATCH --mem=50000
-#SBATCH --job-name=jobsub_lane2_B503_align
+#SBATCH --time=24:00:00
+#SBATCH --mem=100000
+#SBATCH --job-name=jobsub_lane2_B503_align_moremem_updatedsamtools
 #SBATCH --mail-user=roseanna.gamlen.greene@gmail.com
 #SBATCH --mail-type=ALL
-#SBATCH --output=jobsub_lane2_B503_align_%j.out
+#SBATCH --output=jobsub_lane2_B503_align_moremem_updatedsamtools_%j.out
 
 
 # transfer forward reads from B503 to /Demultiplexing_stacks/B503_norenz2_trimR2/
 
 
-# rsync -zv /drives/f/GBS_data_03_02_21/Lane2_GBSdata_2022/jobsub_lane2_B503_align.sh roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/ --progress
+# rsync -zv /drives/f/GBS_data_03_02_21/Lane2_GBSdata_2022/jobsub_lane2_B503_align_moremem_updatedsamtools.sh roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/ --progress
 
 src=/scratch/roseanna/
 bwa_db=$src/Anaxyrus_boreas_genome/bwa/bwa_Anaxyrus_boreas
-cpu=48
+cpu=24
 
 files="R02-SS-KH-01
 R02-SS-KH-02
@@ -75,7 +75,7 @@ echo “Starting alignment at: `date`”
 
 
 module load bwa/0.7.17
-module load samtools/1.11
+module load samtools/1.16.1
 
 
 #
@@ -83,9 +83,9 @@ module load samtools/1.11
 #
 for sample in $files;
 do
-    bwa mem -M -t $cpu $bwa_db $src/Demultiplexing_stacks/B503_norenz2_trimR2/${sample}.1.fq.gz $src/Demultiplexing_stacks/B503_norenz2_trimR2/${sample}.2.fq.gz 2> $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/logs/bwa_lane2_B503.err|
+    bwa mem -M -t $cpu $bwa_db $src/Demultiplexing_stacks/B503_norenz2_trimR2/${sample}.1.fq.gz $src/Demultiplexing_stacks/B503_norenz2_trimR2/${sample}.2.fq.gz 2> $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/logs/bwa_lane2_B503__moremem_updatedsamtools.err|
       samtools view -b -q 20|
-      samtools sort --threads $cpu > $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignmentsmapq20/${sample}.bam;
+      samtools sort --threads $cpu > $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/alignmentsmapq20_B503_moremem_updatedsamtools/${sample}.bam;
 done
 
 echo “Job alignment finished with exit code $? at: `date`”
