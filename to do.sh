@@ -135,12 +135,30 @@ transfer both D701 and B503 align to one folder in tests.ref.ANBO
  #D504 
 
 
+
+# check alignment
+
+# b) check alignment using samtools
+
+module load samtools/1.16.1 StdEnv/2020
+
+x) samtools view -q 30 -c R02-SC-IN-01.bam # counts reads mapped with over 30 quality
+y) samtools flagstat R02-SC-IN-01.bam -O tsv # gives summary of total numner of reads, % mapped etc. 
+
+Divide (x) by (y) to get % mapped reads over 30 quality
+
+
+
 # create barcode files for lane 3 plates (6 files) - (YES)
 
 # create pop map file for all samples (lane 1-3) (YES)
 
 
  when lane 3 samples arrive
+
+ module load fastqc
+
+fastqc NS.1760.001.B711---D503.Hamelin_202110_plate2_R1.fastq.gz
 
  fastqc plates using interactive node salloc
 
