@@ -91,6 +91,7 @@ fastqc file
 ## 7. Align the reads - BWA
 
 using slurm
+only keep reads that align with >20 quality score
 
 
 a)
