@@ -168,17 +168,20 @@ populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq2
   ## 10b. Export vcf file and missing individual files to desktop
   
   
-  ### Fitler SNPs out of HWE
+  ### Fitler SNPs out of HWE 0.01
   
   - Per region, averaged across each locus
   
-    ### Fitler SNPs out of FIS
+    ### Fitler SNPs out of FIS 
   
   - Per pond, averaged across each locus
+  - plot histogram to define cut offs - doesn't have to be symetrical 
 
-  ### Fitler out siblings
+
+
+    ### Fitler out siblings 0.2 full sibs and half sibs (if just full sibs 0.4 0.35)
   
-  R SNPrelate OR COLONY or plink
+  - R SNPrelate OR COLONY or plink
   
   ## ANALYSIS ON WHOLE DATASET
   
