@@ -127,6 +127,7 @@ using slurm
 - take first snp in locus (locus =  DNA between cut sites)
 - run with pop map that does not include experiment pond samples R01-SS-EF - beacuse I have fawn lake in there as well
 - run with various dif filtering criteria
+- filter max obs het 0.6 across all samples
 
 NB - run steps 7-9 on small test dataset first and play with values of M and n to see which to choose. As per Rochette and Catchan paper
 
@@ -167,21 +168,17 @@ populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq2
   ## 10b. Export vcf file and missing individual files to desktop
   
   
-  ### Fitler samples over 0.6 max obs het - at regional level
-
-  R - hierfstat
-
-  ### Fitler out siblings
-  
-  R SNPrelate OR COLONY
-  
   ### Fitler SNPs out of HWE
   
-  - Per pond, averaged across each locus
+  - Per region, averaged across each locus
   
     ### Fitler SNPs out of FIS
   
   - Per pond, averaged across each locus
+
+  ### Fitler out siblings
+  
+  R SNPrelate OR COLONY or plink
   
   ## ANALYSIS ON WHOLE DATASET
   
