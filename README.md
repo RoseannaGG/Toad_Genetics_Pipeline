@@ -179,7 +179,7 @@ populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq2
 
 
 
-    ### Fitler out siblings 0.2 full sibs and half sibs (if just full sibs 0.4 0.35)
+    ### Fitler out siblings 0.2 full sibs and half sibs (if just full sibs 0.4 or 0.35)
   
   - R SNPrelate OR COLONY or plink
   
