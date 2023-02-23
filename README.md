@@ -177,7 +177,11 @@ populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq2
   
   ### Fitler SNPs out of HWE
   
-  - Across whole dataset
+  - Per pond, averaged across each locus
+  
+    ### Fitler SNPs out of FIS
+  
+  - Per pond, averaged across each locus
   
   ## ANALYSIS ON WHOLE DATASET
   
