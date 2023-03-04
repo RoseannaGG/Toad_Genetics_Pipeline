@@ -5,7 +5,7 @@
 
 
 # http://www.ddocent.com/filtering/
-salloc --time=03:00:00 --cpus-per-task=16 --mem=1000M --ntasks=1 --account=def-saitken
+salloc --time=01:00:00 --cpus-per-task=1 --mem=1000M --ntasks=1 --account=def-saitken
 
 
 module load nixpkgs/16.09  intel/2018.3 vcftools/0.1.14
@@ -24,7 +24,7 @@ cd /home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_mi
 ############ EXPORT unfiltered data #########################
 
 
-#rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/gapped0.9.recode.vcf /drives/f/GBS_data_03_02_21/De_novo/stacks_gapped0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/ --progress
+#rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/gapped0.9.recode.vcf /drives/f/GBS_data_03_02_21/De_novo/stacks_gapped0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/ --progress
 
 
 
@@ -480,12 +480,14 @@ Run Time = 17.00 seconds
 
 
 
+ #compute imissing - * are indiv
+vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%.recode.vcf --missing-indv --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNPS
 
 
 
 
-## 40%  ## remove 369
-mawk '$5 > 0.4' populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP.imiss | cut -f1 > populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_40%missINDV.indv
+## 40%  ## 
+mawk '$5 > 0.4' populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNPS.imiss | cut -f1 > populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_40%missINDV.indv
 
 cat populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_40%missINDV.indv
 
@@ -494,8 +496,146 @@ vcftools --vcf populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP
 
 
 
+"Excluding individuals in 'exclude' list
+After filtering, kept 877 out of 883 Individuals
+Outputting VCF file...
+After filtering, kept 8450 out of a possible 8450 Sites
+Run Time = 33.00 seconds
+"
 
 
+
+ #compute imissing - * are indiv
+vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV40%.recode.vcf --missing-indv --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV40%_listindivmissingSNPS
+
+## 30%
+mawk '$5 > 0.3' populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNPS.imiss | cut -f1 > populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_30%missINDV.indv
+
+cat populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_30%missINDV.indv
+
+### ACTUALLY REMOVE INDIVI
+vcftools --vcf populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%.recode.vcf --remove  populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_30%missINDV.indv --recode --recode-INFO-all --out populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%
+
+"Excluding individuals in 'exclude' list
+After filtering, kept 766 out of 883 Individuals
+Outputting VCF file...
+After filtering, kept 8450 out of a possible 8450 Sites
+Run Time = 28.00 seconds
+"
+
+
+ #compute imissing - * are indiv
+vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%.recode.vcf --missing-indv --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listindivmissingSNPS
+
+
+"After filtering, kept 766 out of 766 Individuals
+Outputting Individual Missingness
+After filtering, kept 8450 out of a possible 8450 Sites
+Run Time = 2.00 seconds
+"
+
+
+mawk '!/IN/' populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listindivmissingSNPS.imiss | cut -f5 > populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listindivmissingSNPS_totalmissing
+gnuplot << \EOF 
+set terminal dumb size 120, 30
+set autoscale 
+unset label
+set title "Histogram of % missing data per individual"
+set ylabel "Number of Occurrences"
+set xlabel "% of missing data"
+#set yr [0:100000]
+binwidth=0.01
+bin(x,width)=width*floor(x/width) + binwidth/2.0
+plot 'populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listindivmissingSNPS_totalmissing' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+pause -1
+EOF
+
+
+
+                                       Histogram of % missing data per individual                      
+                                                                                                       
+  90 +-+---------------+------------------+------------------+-----------------+-----------------+----------------+-+
+     +              ****                  +                  +                 +                 +                  +
+     |              *  *                                                                                    ******* |
+  80 +-+            *  *                                                                                          +-+
+     |              *  *                                                                                            |
+  70 +-+            *  *                                                                                          +-+
+     |              *  *                                                                                            |
+     |              *  *****                                                                                        |
+  60 +-+            *  *   *                                                                                      +-+
+     |              *  *   *                                                                                        |
+  50 +-+            *  *   *                                                                                      +-+
+     |              *  *   *                                                                                        |
+     |              *  *   *                                                                                        |
+  40 +-+            *  *   *   ********                                                                           +-+
+     |              *  *   *****   *  *****      *****                                                              |
+  30 +-+            *  *   *   *   *  *   *   ****   *          *****                                             +-+
+     |          *****  *   *   *   *  *   *   *  *   *   *****  *   *                                               |
+     |          *   *  *   *   *   *  *   *   *  *   *   *   *  *   *          *****                     *****      |
+  20 +-+    *****   *  *   *   *   *  *   *   *  *   *   *  ***************************************************** +-+
+     |   ****   *   *  *   *   *   *  *   *****  *   *****  **  *   *   *  *   *   *  *****   ************   *  *   |
+  10 +-+ *  *   *   *  *   *   *   *  *   *   *  *   *   *  *****   *****  *   *   ****   *   *  *   *   *   **** +-+
+     |   *  *   *   *  *   *   *   *  *   *   *  *   *   *  **  *   *   *  *   *   *  *   *   *  *   *   *   *  *   |
+     +   *  *   *   *  *   *   *   *  *   *   *  *   *   *  **  *   *   *  *   *   *  *   *   *  *   *   *   *  *   +
+   0 ************************************************************************************************************-+-+
+     0                0.05               0.1                0.15              0.2               0.25               0.3
+                                                    % of missing data                                  
+                                                            
+
+
+ #compute imissing site (snp) - % missing indiv on a per SNP basis * is snp
+vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%.recode.vcf --missing-site --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listSITEmissing
+
+cat populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listSITEmissing.lmiss
+
+
+
+
+mawk '!/IN/' populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listSITEmissing.lmiss | cut -f6 > populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listSITEmissing_totalmissing
+gnuplot << \EOF 
+set terminal dumb size 120, 30
+set autoscale 
+unset label
+set title "Histogram of % missing INDV per SNP"
+set ylabel "Number of Occurrences"
+set xlabel "% of missing data"
+#set yr [0:100000]
+binwidth=0.01
+bin(x,width)=width*floor(x/width) + binwidth/2.0
+plot 'populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_listSITEmissing_totalmissing' using (bin($1,binwidth)):(1.0) smooth freq with boxes
+pause -1
+EOF
+
+
+
+                                            Histogram of % missing INDV per SNP                        
+                                                                                                       
+  1600 +-+-------------------+---------------------+--------------------+---------------------+-------------------+-+
+       +                     +                     +                    +                     +                     +
+       |                                                                                                    ******* |
+  1400 +-+                                                      *****                                             +-+
+       |                                                        *   *                                               |
+       |                                                        *   *                                               |
+  1200 +-+                                                 ******   *****                                         +-+
+       |                                                   *    *   *   *                                           |
+       |                                                   *    *   *   *                                           |
+  1000 +-+                                                 *    *   *   ******                                    +-+
+       |                                                   *    *   *   *    *                                      |
+   800 +-+                                             *****    *   *   *    *                                    +-+
+       |                                               *   *    *   *   *    *                                      |
+       |                                           *****   *    *   *   *    *                                      |
+   600 +-+                                         *   *   *    *   *   *    *                                    +-+
+       |                                           *   *   *    *   *   *    *****                                  |
+       |                                      ******   *   *    *   *   *    *   *                                  |
+   400 +-+                                    *    *   *   *    *   *   *    *   *                                +-+
+       |                                      *    *   *   *    *   *   *    *   *                                  |
+       |                                      *    *   *   *    *   *   *    *   *                                  |
+   200 +-+                            *********    *   *   *    *   *   *    *   *****                            +-+
+       |                         ******   *   *    *   *   *    *   *   *    *   *   ******                         |
+       +            **************    *   *   *    *   *   *    *   *   *    *   *   *    *****                     +
+     0 *********************************************************************************************--------------+-+
+       0                    0.05                  0.1                  0.15                  0.2                   0.25
+                                                     % of missing data                                 
 
 
 
@@ -537,10 +677,30 @@ Run Time = 16.00 seconds
 
 "
 
-vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV30%.recode.vcf --maf 0.05 --remove-filtered-all --recode --recode-INFO-all --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV30%_maf005
+# maf 0.01
+vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%.recode.vcf --maf 0.01 --remove-filtered-all --recode --recode-INFO-all --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf001
 
 
 "
+After filtering, kept 766 out of 766 Individuals
+Outputting VCF file...
+After filtering, kept 7673 out of a possible 8450 Sites
+Run Time = 26.00 seconds
+
+"
+
+
+# maf 0.03
+vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%.recode.vcf --maf 0.03 --remove-filtered-all --recode --recode-INFO-all --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003
+
+
+"
+
+After filtering, kept 766 out of 766 Individuals
+Outputting VCF file...
+After filtering, kept 3496 out of a possible 8450 Sites
+Run Time = 13.00 seconds
+
 
 "
 
@@ -549,16 +709,36 @@ vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populat
 ### populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV30%_maf001 ###
 
 
-rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV30%_maf001.recode.vcf roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_listindivmissingSNP_30%missINDV.indv /drives/f/GBS_data_03_02_21/De_novo/stacks_gapped0.9.M3/805_populationsruns_nov2021/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/371INDIV_2392SNPS/ --progress
+rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV30%_maf001.recode.vcf roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_listindivmissingSNP_30%missINDV.indv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/371INDIV_2392SNPS/ --progress
 
 
 
-rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.log roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.sumstats_summary.tsv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.log.distribs roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.snps.vcf /drives/f/GBS_data_03_02_21/De_novo/stacks_gapped0.9.M3/805_populationsruns_nov2021/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/ --progress
+rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.log roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.sumstats_summary.tsv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.log.distribs roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations.snps.vcf /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/ --progress
 
 
-rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/catalog.calls roseanna@cedar.computecanada.ca:/home/roseanna/scratch/Denovo_May2021/stacks_gappedmin0.9.M3/catalog.fa.gz /drives/f/GBS_data_03_02_21/De_novo/stacks_gapped0.9.M3/ --progress
+rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/catalog.calls roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/catalog.fa.gz /drives/f/GBS_data_03_02_21/De_novo/stacks_gapped0.9.M3/ --progress
+
+
+
+# 883INDIV_7794SNPS
+### populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_maf001
+
+
+rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_maf001.recode.vcf roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_listindivmissingSNP_40%missINDV.indv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/883INDIV_7794SNPS/ --progress
+
+
+# 766INDIV_7673SNPS
+### populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf001
+
+
+rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf001.recode.vcf roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_listindivmissingSNP_40%missINDV.indv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_30%missINDV.indv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_7673SNPS/ --progress
 
 
 
 
+# 766INDIV_3496SNPS
+### populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf001
+
+
+rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003.recode.vcf roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_listindivmissingSNP_40%missINDV.indv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_30%missINDV.indv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/ --progress
 
