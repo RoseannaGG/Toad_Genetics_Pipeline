@@ -121,3 +121,17 @@ dim(pop.data) #  766   7
 
 #open shortened file
 pop.data <- read.table("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/popmap.766_samples_header_region_rmINdiv_sorted.txt", sep = "\t", header = TRUE)
+
+str(pop.data$pop)
+
+str(pop.data$pop)
+
+pop.data2<-pop.data
+
+pop.data2$pop<-as.factor(pop.data2$pop)
+
+levels(pop.data2$pop)
+
+ponds_kept_766INDIV_3496SNPS<-levels(pop.data2$pop)
+
+write.table(ponds_kept_766INDIV_3496SNPS,"F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/ponds_kept_766INDIV_3496SNPS.txt",quote=FALSE,sep = "\t",row.names=FALSE,col.names = F)
