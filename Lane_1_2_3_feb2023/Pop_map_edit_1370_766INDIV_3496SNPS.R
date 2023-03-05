@@ -122,8 +122,7 @@ dim(pop.data) #  766   7
 #open shortened file
 pop.data <- read.table("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/popmap.766_samples_header_region_rmINdiv_sorted.txt", sep = "\t", header = TRUE)
 
-str(pop.data$pop)
-
+# count pops and get list
 str(pop.data$pop)
 
 pop.data2<-pop.data

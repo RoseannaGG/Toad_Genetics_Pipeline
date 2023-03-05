@@ -217,7 +217,7 @@ locinamnes_766_1503<-gl.toad.nosibs.hwe.FIS@loc.names
 filtered.VCF_766_1503<-filtered.VCF[filtered.VCF@fix[,3]%in%locinamnes_766_1503,]
 
 # write
-vcfR::write.vcf(filtered.VCF_766_1503, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/766INDIV_1503SNPS_filteredinR.vcf.gz")
+vcfR::write.vcf(filtered.VCF_766_1503, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/419NDIV_1367SNPS_filteredinR.vcf.gz")
 
 # then uncompress in folder
 
@@ -724,13 +724,13 @@ source("F:/GBS_data_03_02_21/genind2structureL_function.R")
 
 
 
-genind2structureL(genind.toad.nosibs.hwe.FIS.HaidaGwai, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/HG_genind_structure_766INDIV_1503SNPS_regionID.str", pops=TRUE)
+genind2structureL(genind.toad.nosibs.hwe.FIS.HaidaGwai, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/HG_genind_structure_419NDIV_1367SNPS_regionID.str", pops=TRUE)
 
 
-genind2structureL(genind.toad.nosibs.hwe.FIS.VanIsland, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/VI_VanIsland_genind_structure_766INDIV_1503SNPS_regionID.str", pops=TRUE)
+genind2structureL(genind.toad.nosibs.hwe.FIS.VanIsland, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/VI_VanIsland_genind_structure_419NDIV_1367SNPS_regionID.str", pops=TRUE)
 
 
-genind2structureL(genind.toad.nosibs.hwe.FIS.LowerMain, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/ML_LowerMain_genind_structure_766INDIV_1503SNPS_regionID.str", pops=TRUE)
+genind2structureL(genind.toad.nosibs.hwe.FIS.LowerMain, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/ML_LowerMain_genind_structure_419NDIV_1367SNPS_regionID.str", pops=TRUE)
 
 ###########################################
 #### convert STR TO vcf USING PDF SPIDER ####
@@ -777,14 +777,14 @@ head(HG_mafvcf.df)
 par(mar=c(2,2,2,2))
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_HG_766INDIV_1503SNPS_freq.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_HG_419NDIV_1367SNPS_freq.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(HG_mafvcf.df$Frequency,breaks=seq(0,0.5,l=50), main=" ",
      ylim = c(0, 400),
      xlab="Minor allele frequency",
      ylab="Frequency")
 dev.off()
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_HG_766INDIV_1503SNPS_count.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_HG_419NDIV_1367SNPS_count.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(HG_mafvcf.df$Count, main=" ",
      ylim = c(0, 600),
      xlab="Minor allele count",
@@ -827,14 +827,14 @@ head(VI_mafvcf.df)
 par(mar=c(2,2,2,2))
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_VI_766INDIV_1503SNPS_freq.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_VI_419NDIV_1367SNPS_freq.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(VI_mafvcf.df$Frequency,breaks=seq(0,0.5,l=50), main=" ",
      ylim = c(0, 400),
      xlab="Minor allele frequency",
      ylab="Frequency")
 dev.off()
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_VI_766INDIV_1503SNPS_count.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_VI_419NDIV_1367SNPS_count.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(VI_mafvcf.df$Count, main=" ",
      ylim = c(0, 600),
      xlab="Minor allele count",
@@ -873,14 +873,14 @@ head(LM_mafvcf.df)
 par(mar=c(2,2,2,2))
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_LM_766INDIV_1503SNPS_freq.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_LM_419NDIV_1367SNPS_freq.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(LM_mafvcf.df$Frequency,breaks=seq(0,0.5,l=50), main=" ",
      ylim = c(0, 400),
      xlab="Minor allele frequency",
      ylab="Frequency")
 dev.off()
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_LM_766INDIV_1503SNPS_count.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_LM_419NDIV_1367SNPS_count.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(LM_mafvcf.df$Count, main=" ",
      ylim = c(0, 600),
      xlab="Minor allele count",
@@ -1360,11 +1360,11 @@ write.table(trial, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_13
 #####################################
 
 #list sibs to remove
-namesib9<-read.table("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Rmsibs/listindiv_kingrobust_0.25_r1_1.9.txt")
+listindiv_plink_sub_sib_rel_over_04_names_unique.char<-read.table("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Rmsibs/listindiv_plink_sub_sib_rel_over_04_names_unique.char.txt")
 
-namesib9$V1
+listindiv_plink_sub_sib_rel_over_04_names_unique.char$V1
 
-listsibs<-namesib9$V1
+listsibs<-listindiv_plink_sub_sib_rel_over_04_names_unique.char$V1
 
 
 # function alba made to remove siblings
@@ -1378,28 +1378,42 @@ gl.toad.nosibs
 
 "/// GENLIGHT OBJECT /////////
 
- // 766 genotypes,  602 binary SNPs, size: 1.3 Mb
- 63861 (18.16 %) missing data
+ // 419 genotypes,  3,496 binary SNPs, size: 2.4 Mb
+ 236613 (16.15 %) missing data
 
  // Basic content
-   @gen: list of 766 SNPbin
+   @gen: list of 419 SNPbin
    @ploidy: ploidy of each individual  (range: 2-2)
 
  // Optional content
-   @ind.names:  766 individual labels
-   @loc.names:  602 locus labels
+   @ind.names:  419 individual labels
+   @loc.names:  3496 locus labels
    @chromosome: factor storing chromosomes of the SNPs
    @position: integer storing positions of the SNPs
-   @pop: population of each individual (group size range: 130-311)
+   @pop: population of each individual (group size range: 32-160)
    @other: a list containing: elements without names 
+ 
 "
 
 ### edit pop file
 
 pop.data<-pop.data[which(!pop.data$sample.id %in% listsibs),]
-dim(pop.data)
+dim(pop.data) # 419   7
 
-write.table(pop.data,"F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/popmap.766_samples_header_region_rmINdiv_rmsibs_sorted.txt",quote=FALSE,sep = "\t",row.names=FALSE)
+write.table(pop.data,"F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/popmap.419_samples_header_region_rmINdiv_rmsibs_sorted.txt",quote=FALSE,sep = "\t",row.names=FALSE)
+
+# count pops and get list
+str(pop.data$pop)
+
+pop.data2<-pop.data
+
+pop.data2$pop<-as.factor(pop.data2$pop)
+
+levels(pop.data2$pop)
+
+ponds_kept_419INDIV_3496SNPS<-levels(pop.data2$pop)
+
+
 
 
 #######################
@@ -1407,7 +1421,7 @@ write.table(pop.data,"F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_
 ######################
 #https://grunwaldlab.github.io/Population_Genetics_in_R/Locus_Stats.html
 
-gl.toad.nosibs<-gl.toad
+#gl.toad.nosibs<-gl.toad
 
 ## check new pop.data file
 dim(pop.data)
@@ -1476,7 +1490,7 @@ summary(nanhwe.mat.df6)
 
 
 # -------------------- variations ########
-nanhwe.mat.df$INhwe_count <- apply( nanhwe.mat.df[ ,1:26], 1, function(x) sum( x > 0.01 ))
+nanhwe.mat.df$INhwe_count <- apply( nanhwe.mat.df[ ,1:44], 1, function(x) sum( x > 0.01 ))
 
 #keep.loci1 <- nanhwe.mat.df[ which( nanhwe.mat.df$INhwe_count==3 ), ]
 #nrow(keep.loci1) #988
@@ -1486,7 +1500,7 @@ nanhwe.mat.df$INhwe_count <- apply( nanhwe.mat.df[ ,1:26], 1, function(x) sum( x
 2/3*44 = 29.3
 
 keep.loci2 <- nanhwe.mat.df[ which( nanhwe.mat.df$INhwe_count >=29 ), ]
-nrow(keep.loci2) #577
+nrow(keep.loci2) #1399
 
 
 #keep.loci3 <- nanhwe.mat.df[ which( nanhwe.mat.df$INhwe_count >=1 ), ]
@@ -1494,7 +1508,7 @@ nrow(keep.loci2) #577
 
 
 #keep.loci4 <- nanhwe.mat.df[ which( nanhwe.mat.df$INhwe_count >=1 ), ]
-nrow(keep.loci4) #349
+#nrow(keep.loci4) #349
 
 
 ####################################################
@@ -1506,7 +1520,22 @@ gl.toad.nosibs.hwe <- gl.toad.nosibs[ , hwe.keep.loci.names]
 gl.toad.nosibs.hwe
 
 "
+ /// GENLIGHT OBJECT /////////
 
+ // 419 genotypes,  1,399 binary SNPs, size: 1.2 Mb
+ 88746 (15.14 %) missing data
+
+ // Basic content
+   @gen: list of 419 SNPbin
+   @ploidy: ploidy of each individual  (range: 2-2)
+
+ // Optional content
+   @ind.names:  419 individual labels
+   @loc.names:  1399 locus labels
+   @chromosome: factor storing chromosomes of the SNPs
+   @position: integer storing positions of the SNPs
+   @pop: population of each individual (group size range: 32-160)
+   @other: a list containing: elements without names 
 
 "
 
@@ -1806,15 +1835,15 @@ FISdataperpond<-hierftoad.nosibs.hwebasic$Fis
 FISdataperpondavg <- data.frame("SNP"=rownames(FISdataperpond), "Average"=rowMeans(FISdataperpond, na.rm=T))
 hist(FISdataperpondavg$Average,breaks=seq(-1,1,l=100))
 
-#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_766INDIV_1211SNPS_hwe0.01_100bins.png", width = 8, height = 6.5, units = 'in', res = 300)
+#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_419INDIV_1399SNPS_hwe0.01_100bins.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(FISdataperpondavg$Average,breaks=seq(-2,2,l=100))
 dev.off()
 
-#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_766INDIV_1211SNPS_hwe0.01_50bins.png", width = 8, height = 6.5, units = 'in', res = 300)
+#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_7419INDIV_1399SNPS_hwe0.01_50bins.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(FISdataperpondavg$Average,breaks=seq(-2,2,l=50))
 dev.off()
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_766INDIV_1211SNPS_hwe0.01_50bins_formatted_BEFOREfilter.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_419INDIV_1399SNPS_hwe0.01_50bins_formatted_BEFOREfilter.png", width = 8, height = 6.5, units = 'in', res = 300)
 par(mar = c(5, 5,2, 2)+ 0.3, xaxs = "i", yaxs = "i")
 hist(FISdataperpondavg$Average,breaks=seq(-2,2,l=50),bty = "l",
      las = 1,cex.lab=1.6,main="",ylab="Frequency",xlab=expression(paste(italic(F)[plain(IS)],paste(" per locus"))))
@@ -1826,16 +1855,19 @@ dev.off()
 ######### filter
 
 # snps I want to keep
-nrow(FISdataperpondavg[which(FISdataperpondavg$Average<0.1 & FISdataperpondavg$Average>-0.1),]) 
-#120
+nrow(FISdataperpondavg[which(FISdataperpondavg$Average<0.4 & FISdataperpondavg$Average>-0.35),]) 
+# 1367
 
 # snps I want to delete
-nrow(FISdataperpondavg[which(FISdataperpondavg$Average>0.1 & FISdataperpondavg$Average>-0.1),]) 
-#11
+nrow(FISdataperpondavg[which(FISdataperpondavg$Average>0.4 & FISdataperpondavg$Average>(-0.35)),]) 
+#
 
-SNPkeepaveFIS<-FISdataperpondavg[which(FISdataperpondavg$Average<0.1 & FISdataperpondavg$Average>-0.1),]
+str(FISdataperpondavg)
+
+SNPkeepaveFIS<-FISdataperpondavg[which(FISdataperpondavg$Average<0.4 & FISdataperpondavg$Average>-0.35),]
 
 SNPkeep<-SNPkeepaveFIS$SNP
+str(SNPkeep) #chr [1:1367]
 
 SNPkeep2<- sub( '\\.', ':', SNPkeep)
 
@@ -1845,22 +1877,22 @@ gl.toad.nosibs.hwe.FIS <- gl.toad.nosibs.hwe[ , SNPkeep2]
 gl.toad.nosibs.hwe.FIS
 
 
-"/// GENLIGHT OBJECT /////////
+" /// GENLIGHT OBJECT /////////
 
- // 766 genotypes,  1,503 binary SNPs, size: 2.1 Mb
- 143392 (12.45 %) missing data
+ // 419 genotypes,  1,367 binary SNPs, size: 1.2 Mb
+ 87224 (15.23 %) missing data
 
  // Basic content
-   @gen: list of 766 SNPbin
+   @gen: list of 419 SNPbin
    @ploidy: ploidy of each individual  (range: 2-2)
 
  // Optional content
-   @ind.names:  766 individual labels
-   @loc.names:  1503 locus labels
+   @ind.names:  419 individual labels
+   @loc.names:  1367 locus labels
    @chromosome: factor storing chromosomes of the SNPs
    @position: integer storing positions of the SNPs
-   @pop: population of each individual (group size range: 195-287)
-   @other: a list containing: elements without names "
+   @pop: population of each individual (group size range: 32-160)
+   @other: a list containing: elements without names  "
 
 
 
@@ -1892,17 +1924,17 @@ FISdataperpond<-hierftoad.nosibs.hwe.FISbasic$Fis
 FISdataperpondavg <- data.frame("SNP"=rownames(FISdataperpond), "Average"=rowMeans(FISdataperpond, na.rm=T))
 hist(FISdataperpondavg$Average,breaks=seq(-0.5,0.5,l=100))
 
-#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_766INDIV_1503SNPS_hwe0.01_100bins.png", width = 8, height = 6.5, units = 'in', res = 300)
+#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_419NDIV_1367SNPS_hwe0.01_100bins.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(FISdataperpondavg$Average,breaks=seq(-0.5,0.5,l=100))
 dev.off()
 
-#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_766INDIV_1503SNPS_hwe0.01_50bins.png", width = 8, height = 6.5, units = 'in', res = 300)
+#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_419NDIV_1367SNPS_hwe0.01_50bins.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(FISdataperpondavg$Average,breaks=seq(-0.5,0.5,l=50))
 dev.off()
 
 
 ## formatted after filter
-#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_766INDIV_1503SNPS_hwe0.01_50bins_formatted_AFTEREfilter.png", width = 8, height = 6.5, units = 'in', res = 300)
+#png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/FISperpond_plot_419NDIV_1367SNPS_hwe0.01_50bins_formatted_AFTEREfilter.png", width = 8, height = 6.5, units = 'in', res = 300)
 par(mar = c(5, 5,2, 2)+ 0.3, xaxs = "i", yaxs = "i")
 hist(FISdataperpondavg$Average,breaks=seq(-0.5,0.5,l=100)
 ,bty = "l",
@@ -1930,7 +1962,7 @@ pop(genid.toad.nosibs.hwe.FIS)<-pop.data$fourclusters
 genid.toad.nosibs.hwe.FIS@pop
 
 
-genind2structureL(genid.toad.nosibs.hwe.FIS, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/genind_structure_766INDIV_1503SNPS_regionID.str", pops=TRUE)
+genind2structureL(genid.toad.nosibs.hwe.FIS, file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/structure/genind_structure_419INDIV_1367SNPS_regionID.str", pops=TRUE)
 
 #############################
 ######### PCA FIS ##########
@@ -1974,14 +2006,14 @@ sum(my_pca$eig)
 
 
 100*my_pca$eig[c(1,2)]/sum(my_pca$eig)
-#  36.469268  2.909572
+#  31.14959  2.71185
 
 ##per region
 pop(gl.toad.nosibs.hwe.FIS) <- pop.data$fourclusters
 toad.pca.scores$pop <- pop(gl.toad.nosibs.hwe.FIS)
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_4clusters_4axes_766INDIV_1503SNPS_hweperpond_FISperpond.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_4clusters_4axes_419NDIV_1367SNPS_hweperpond_FISperpond.png", width = 8, height = 6.5, units = 'in', res = 300)
 set.seed(9)
 p <- ggplot(toad.pca.scores, aes(x=PC1, y=PC2, colour=pop))
 p <- p + geom_point(size=4, alpha=.9)
@@ -1992,7 +2024,7 @@ p <- p + theme_bw()
 p <- p + scale_color_manual(values=c("#E69F00", "#56B4E9","#009E73","pink"),
                             name="Region", breaks = c("VanIsland","LowerMain", "HaidaGwai","Northwest"), labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))
 p<-p + labs(colour='Region') 
-p<-p + ylab("PC2 (2.91% explained variance)") + xlab("PC1 (36.5% explained variance)") + theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 20), title = element_text(size = 20))
+p<-p + ylab("PC2 (2.71% explained variance)") + xlab("PC1 (31.1% explained variance)") + theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 20), title = element_text(size = 20))
 p<-p + theme(legend.position="top",legend.text=element_text(size=16))
 p<-p + guides(colour=guide_legend(nrow=2))
 p
@@ -2005,7 +2037,7 @@ pop(gl.toad.nosibs.hwe.FIS) <- pop.data$pop
 toad.pca.scores$pop <- pop(gl.toad.nosibs.hwe.FIS)
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_perpop_4axes_766INDIV_1503SNPS_hweperpond_FISperpond.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_perpop_4axes_419NDIV_1367SNPS_hweperpond_FISperpond.png", width = 8, height = 6.5, units = 'in', res = 300)
 set.seed(9)
 p <- ggplot(toad.pca.scores, aes(x=PC1, y=PC2, colour=pop))
 p <- p + geom_point(size=4, alpha=.9)
@@ -2013,20 +2045,17 @@ p <- p + geom_hline(yintercept = 0)
 p <- p + geom_vline(xintercept = 0)
 #p <- p + stat_ellipse(level = 0.95, size = 1)
 p <- p + theme_bw()
-p <- p + scale_color_manual(values=c("#89C5DA",  "#74D944", "#CE50CA", "#3F4921","#DA5724", "#C0717C", "#CBD588", "#5F7FC7", 
-                                     "#673770", "#D3D93E", "#38333E", "#508578", "#D7C1B1", "#689030", "#AD6F3B", "#CD9BCD", 
-                                     "#D14285", "#6DDE88", "#652926", "#7FDCC0", "#C84248", "#8569D5", "#5E738F", "#D1A33D", 
-                                     "#8A7C64", "#599861","#009E73"))
 #                            name="Region", breaks = c("VanIsland","LowerMainland", "HaidaGwaii","Northwest"), labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))
 p<-p + labs(colour='pop') 
-p<-p + ylab("PC2 (1.5% explained variance)") + xlab("PC1 (22.1% explained variance)") + theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 20), title = element_text(size = 20))
+p<-p + ylab("PC2 (2.71% explained variance)") + xlab("PC1 (31.1% explained variance)") + theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 20), title = element_text(size = 20))
+p<-p + guides(colour=guide_legend(nrow=5))
 p
 dev.off()
 
 
 
 ## NEW COLS 
-ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_MOEpop_4axes_766INDIV_1503SNPS_hweperpond_FISperpond_orangegrad_legright2.pdf",  bg = "transparent",width =300, height = 150, units = c("mm"))
+ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_MOEpop_4axes_419NDIV_1367SNPS_hweperpond_FISperpond_orangegrad_legright2.pdf",  bg = "transparent",width =300, height = 150, units = c("mm"))
 p <- ggplot(toad.pca.scores, aes(x=PC1, y=PC2, colour=pop))
 p <- p + geom_point(size=4, alpha=0.9)
 p <- p + geom_hline(yintercept = 0)
@@ -2036,7 +2065,7 @@ p <- p + theme_bw()
 p <- p + scale_color_manual(values=c("#ab4e03", "#fca45d","#009E73"),
                             name="Region", breaks = c("VanIsland","LowerMainland", "HaidaGwaii","Northwest"), labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))
 p<-p + labs(colour='moe region') 
-p<-p + ylab("PC2 (1.5% explained variance)") + xlab("PC1 (22.1% explained variance)") + theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 20), title = element_text(size = 20))
+p<-p + ylab("PC2 (2.71% explained variance)") + xlab("PC1 (31.1% explained variance)") + theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 20), title = element_text(size = 20))
 p<-p + theme(legend.position="right",legend.text=element_text(size=18),legend.key.height=unit(2,"line"),panel.grid.major.x = element_blank(),
              panel.grid.minor.x = element_blank(),
              panel.grid.major.y = element_blank(),
@@ -2095,7 +2124,7 @@ pop(gl.toad.nosibs.hwe.FIS) <- pop.data$fourclusters
 toad.pca.scores$pop <- pop(gl.toad.nosibs.hwe.FIS)
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_MOEpop_4axes_766INDIV_1503SNPS_hweperpond_FISperpond_PC3_PC4.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_col_MOEpop_4axes_419NDIV_1367SNPS_hweperpond_FISperpond_PC3_PC4.png", width = 8, height = 6.5, units = 'in', res = 300)
 set.seed(9)
 p <- ggplot(toad.pca.scores, aes(x=PC3, y=PC4, colour=pop))
 p <- p + geom_point(size=4, alpha=.9)
@@ -2112,7 +2141,7 @@ p
 dev.off()
 
 ## NEW COL
-ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_MOEpop_766INDIV_1503SNPS_hweperpond_FISperpond_orangegrad_legright2_PC3_PC4.pdf",  bg = "transparent",width =300, height = 150, units = c("mm"))
+ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/PCA/PCA_MOEpop_419NDIV_1367SNPS_hweperpond_FISperpond_orangegrad_legright2_PC3_PC4.pdf",  bg = "transparent",width =300, height = 150, units = c("mm"))
 p <- ggplot(toad.pca.scores, aes(x=PC3, y=PC4, colour=pop))
 p <- p + geom_point(size=4, alpha=0.9)
 p <- p + geom_hline(yintercept = 0)
@@ -2136,7 +2165,24 @@ dev.off()
 ########################################
 
 genid.toad.nosibs.hwe.FIS<-dartR::gl2gi(gl.toad.nosibs.hwe.FIS, probar = FALSE, verbose = NULL)
+genid.toad.nosibs.hwe.FIS
 
+"/// GENIND OBJECT /////////
+
+ // 419 individuals; 1,367 loci; 2,734 alleles; size: 5.2 Mb
+
+ // Basic content
+   @tab:  419 x 2734 matrix of allele counts
+   @loc.n.all: number of alleles per locus (range: 2-2)
+   @loc.fac: locus factor for the 2734 columns of @tab
+   @all.names: list of allele names for each locus
+   @ploidy: ploidy of each individual  (range: 2-2)
+   @type:  codom
+   @call: df2genind(X = xx[, ], sep = "/", ncode = 1, ind.names = gl@ind.names, 
+    pop = gl@pop, NA.char = "-", ploidy = 2)
+
+ // Optional content
+   @pop: population of each individual (group size range: 1-22)"
 
 #### heirfstat conversion from genind ########
 hierf.toad.nosibs.hwe.FIS<-genind2hierfstat(genid.toad.nosibs.hwe.FIS,pop=NULL)
@@ -2154,20 +2200,20 @@ hierf.toad.nosibs.hwe.FIS$pop <- factor(pop.data$fourclusters)
 trial<-pairwise.WCfst(hierf.toad.nosibs.hwe.FIS,diploid=T)
 trial
 
-"                   HaidaGwai  LowerMain Northwest  VanIsland
-HaidaGwai        NA 0.52769493 0.6726513 0.57886605
-LowerMain 0.5276949         NA 0.1053042 0.05683155
-Northwest 0.6726513 0.10530425        NA 0.11991559
-VanIsland 0.5788661 0.05683155 0.1199156         NA   "
+"      HaidaGwai  LowerMain Northwest  VanIsland
+HaidaGwai        NA 0.50939527 0.6277858 0.55075195
+LowerMain 0.5093953         NA 0.1045395 0.05055287
+Northwest 0.6277858 0.10453954        NA 0.11580875
+VanIsland 0.5507519 0.05055287 0.1158087         NA         "
 
-write.table(trial, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_4clusters_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1.txt",sep = "\t",row.names = TRUE,col.names = TRUE )
-
-
+write.table(trial, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_4clusters_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1.txt",sep = "\t",row.names = TRUE,col.names = TRUE )
 
 
 
 
-#has pop - as two areas
+
+
+#has pop - as three areas
 hierf.toad.nosibs.hwe.FIS$pop
 
 hierf.toad.nosibs.hwe.FIS$pop <- pop.data$threeclusters
@@ -2176,12 +2222,12 @@ hierf.toad.nosibs.hwe.FIS$pop <- factor(pop.data$threeclusters)
 trial2<-pairwise.WCfst(hierf.toad.nosibs.hwe.FIS,diploid=T)
 trial2
 
-"                HaidaGwai  Northwest       swBC
-HaidaGwai        NA 0.67265135 0.47762352
-Northwest 0.6726513         NA 0.09542733
-swBC      0.4776235 0.09542733         NA       "
+"             HaidaGwai  Northwest       swBC
+HaidaGwai        NA 0.62778584 0.46341032
+Northwest 0.6277858         NA 0.09491858
+swBC      0.4634103 0.09491858         NA        "
 
-write.table(trial2, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_3clusters_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1.txt",sep = "\t",row.names = TRUE,col.names = TRUE )
+write.table(trial2, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_3clusters_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1.txt",sep = "\t",row.names = TRUE,col.names = TRUE )
 
 
 # as pop
@@ -2190,12 +2236,12 @@ hierf.toad.nosibs.hwe.FIS$pop
 hierf.toad.nosibs.hwe.FIS$pop <- pop.data$pop
 hierf.toad.nosibs.hwe.FIS$pop <- factor(pop.data$pop)
 
-trial<-pairwise.WCfst(hierf.toad.nosibs.hwe.FIS,diploid=T)
-trial
+trial3<-pairwise.WCfst(hierf.toad.nosibs.hwe.FIS,diploid=T)
+trial3
 
 "               "
 
-write.csv(trial, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_POP_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1_take2.csv")
+write.csv(trial3, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_POP_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1_take2.csv")
 
 
 
@@ -2206,7 +2252,7 @@ pop(gl.toad.nosibs.hwe.FIS) <- pop.data$pop
 (Fstp<-stamppFst(gl.toad.nosibs.hwe.FIS, nboots = 100, percent = 95, nclusters = 1))
 
 
-write.csv(Fstp$Pvalues, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_pvalue_POP_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1.csv" )
+write.csv(Fstp$Pvalues, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_pvalue_POP_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1.csv" )
 
 
 
@@ -2216,15 +2262,15 @@ pop(gl.toad.nosibs.hwe.FIS) <- pop.data$twoclusters
 (Fstp<-stamppFst(gl.toad.nosibs.hwe.FIS, nboots = 100, percent = 95, nclusters = 1))
 
 
-write.csv(Fstp$Pvalues, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_pvalue_2clusters_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1.csv" )
+write.csv(Fstp$Pvalues, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_pvalue_2clusters_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1.csv" )
 
-##### p value three areas
+##### p value four areas
 pop(gl.toad.nosibs.hwe.FIS) <- pop.data$fourclusters
 
 (Fstp<-stamppFst(gl.toad.nosibs.hwe.FIS, nboots = 100, percent = 95, nclusters = 1))
 
 
-write.csv(Fstp$Pvalues, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_pvalue_3regions_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1.csv" )
+write.csv(Fstp$Pvalues, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Fst_pvalue_3regions_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1.csv" )
 
 
 
@@ -2243,7 +2289,7 @@ par(mar = c(3,3,3,3))
 
 summary(perloc.basic.nosibs.hwe.FIS$Fst)
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Hist_Fst_perlocus_2regions_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1_2.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Hist_Fst_perlocus_2regions_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1_2.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(perloc.basic.nosibs.hwe.FIS$Fst,breaks=seq(-0.003100,1,l=50),
      main = " ",
      xlab="Pairwise Fst per locus between Haida Gwaii and southwest BC",
@@ -2251,7 +2297,7 @@ hist(perloc.basic.nosibs.hwe.FIS$Fst,breaks=seq(-0.003100,1,l=50),
 dev.off()
 
 
-ggsave("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Hist_Fst_perlocus_2regions_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1.svg", width = 8, height = 6.5, units = 'in')
+ggsave("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Hist_Fst_perlocus_2regions_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1.svg", width = 8, height = 6.5, units = 'in')
 hist(perloc.basic.nosibs.hwe.FIS$Fst,breaks=seq(-0.003100,1,l=50),
      xlab="Pairwise Fst between Haida Gwaii and southwest BC",
      ylab="Frequency")
@@ -2268,7 +2314,7 @@ summary(perlocobject$FST)
 
 hist(perlocobject$FST,breaks=seq(-0.006251 ,1,l=50))
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Hist_Fst_perlocus_2regions_766INDIV_1503SNPS_hwe44pops0.01_FISperpond0.1_wcfunc.png", width = 8, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Fst/Hist_Fst_perlocus_2regions_419NDIV_1367SNPS_hwe44pops0.01_FISperpond0.1_wcfunc.png", width = 8, height = 6.5, units = 'in', res = 300)
 hist(perlocobject$FST,breaks=seq(-0.006251 ,1,l=50),
 main = " ",
      xlab="Pairwise Fst per locus between Haida Gwaii and southwest BC",
@@ -2606,7 +2652,7 @@ OVERALL    0.0958 0.1144  0.0975 0.1236   NA -0.0179      NA      NA "
 
 ### pop stats output #####
 
-write.table(forb2.pop.stats.hwe.FIS, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/hierfstat_popstats_region_766INDIV_1503SNPS_hwe44pops_FISperpond.txt",sep = "\t",row.names = TRUE,col.names = TRUE)
+write.table(forb2.pop.stats.hwe.FIS, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/hierfstat_popstats_region_419NDIV_1367SNPS_hwe44pops_FISperpond.txt",sep = "\t",row.names = TRUE,col.names = TRUE)
 
 
 ########################################
@@ -2648,7 +2694,7 @@ p<-p+theme(legend.position = "none")
 p
 
 ### save
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Fis_95CI_per_region_766INDIV_1503SNPS_hwe44pops_FISperpond0.1.png", width = 8, height = 6.5, units = 'in', res = 600)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Fis_95CI_per_region_419NDIV_1367SNPS_hwe44pops_FISperpond0.1.png", width = 8, height = 6.5, units = 'in', res = 600)
 p<-ggplot(dfFis_95CI_region, aes(x = Region, color = Region, y=Fis)) +
   geom_point(size = 4)+
   theme_classic() +
@@ -2684,7 +2730,7 @@ p
 
 
 ## formatted correctly
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Fis_95CI_per_region_766INDIV_1503SNPS_hwe44pops_FISperpond0.1_symbolsforamtted.png", width = 8, height = 6.5, units = 'in', res = 600)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Fis_95CI_per_region_419NDIV_1367SNPS_hwe44pops_FISperpond0.1_symbolsforamtted.png", width = 8, height = 6.5, units = 'in', res = 600)
 p<-ggplot(dfFis_95CI_region, aes(x = Region, color = Region, y=Fis)) +
   geom_point(size = 4)+
   theme_classic() +
@@ -2701,7 +2747,7 @@ dev.off()
 
 
 ## new COL
-ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Fis_95CI_per_region_766INDIV_1503SNPS_hwe44pops_FISperpond0.1_neworange.png",  bg = "transparent",width =200, height = 180, units = c("mm"))
+ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Fis_95CI_per_region_419NDIV_1367SNPS_hwe44pops_FISperpond0.1_neworange.png",  bg = "transparent",width =200, height = 180, units = c("mm"))
 p<-ggplot(dfFis_95CI_region, aes(x = Region, color = Region, y=Fis)) +
   geom_point(size = 8)+
   theme_classic() +
@@ -2843,6 +2889,268 @@ hierf.toadobs$Ho
 
 
 
+
+
+
+
+
+###############################
+####### He vs Ho FIS ##########
+#############################
+
+##################################
+###########  Ext Het m- max obs het as one ####################
+############################
+
+
+#### split matrix into 3 regions ###########
+
+pop(gl.toad.nosibs.hwe.FIS) <- pop.data$fourclusters
+
+gl.toad.nosibs.hwe.FISbypop<-seppop(gl.toad.nosibs.hwe.FIS)
+
+
+gl.toad.nosibs.hwe.FISVanIsland<-gl.toad.nosibs.hwe.FISbypop$VanIsland
+gl.toad.nosibs.hwe.FISLowerMain<-gl.toad.nosibs.hwe.FISbypop$LowerMain
+gl.toad.nosibs.hwe.FISHaidaGwai<-gl.toad.nosibs.hwe.FISbypop$HaidaGwai
+gl.toad.nosibs.hwe.FISNorthwest<-gl.toad.nosibs.hwe.FISbypop$Northwest
+
+
+
+
+### convert genlight to genind objects 
+genind.toad.nosibs.hwe.FISVanIsland<-dartR::gl2gi(gl.toad.nosibs.hwe.FISVanIsland, probar = FALSE, verbose = NULL)
+
+
+""
+
+
+genind.toad.nosibs.hwe.FISLowerMain<-dartR::gl2gi(gl.toad.nosibs.hwe.FISLowerMain, probar = FALSE, verbose = NULL)
+
+""
+
+
+genind.toad.nosibs.hwe.FISHaidaGwai<-dartR::gl2gi(gl.toad.nosibs.hwe.FISHaidaGwai, probar = FALSE, verbose = NULL)
+
+''
+genind.toad.nosibs.hwe.FISNorthwest<-dartR::gl2gi(gl.toad.nosibs.hwe.FISNorthwest, probar = FALSE, verbose = NULL)
+
+
+############### summary on each one
+genind.toad.nosibs.hwe.FISVanIsland_sum<-adegenet::summary(genind.toad.nosibs.hwe.FISVanIsland)
+
+genind.toad.nosibs.hwe.FISLowerMain_sum<-adegenet::summary(genind.toad.nosibs.hwe.FISLowerMain)
+
+genind.toad.nosibs.hwe.FISHaidaGwai_sum<-adegenet::summary(genind.toad.nosibs.hwe.FISHaidaGwai)
+
+genind.toad.nosibs.hwe.FISNorthwest_sum<-adegenet::summary(genind.toad.nosibs.hwe.FISNorthwest)
+
+
+###### Hexp per region ############
+
+## rename
+divVanIsland<-genind.toad.nosibs.hwe.FISVanIsland_sum
+divLowerMain<-genind.toad.nosibs.hwe.FISLowerMain_sum
+divHaidaGwai<-genind.toad.nosibs.hwe.FISHaidaGwai_sum
+divNorthwest<-genind.toad.nosibs.hwe.FISNorthwest_sum
+
+
+divLowerMain$LowerMain_Hexp<-divLowerMain$Hexp
+divVanIsland$VanIsland_Hexp<-divVanIsland$Hexp
+divHaidaGwai$HaidaGwai_Hexp<-divHaidaGwai$Hexp
+divNorthwest$Northwest_Hexp<-divNorthwest$Hexp
+
+
+divallfour<-cbind(divLowerMain$LowerMain_Hexp,divVanIsland$VanIsland_Hexp,divHaidaGwai$HaidaGwai_Hexp,divNorthwest$Northwest_Hexp)
+head(divallfour)
+
+## rename column names
+names(divallfour)
+colnames(divallfour) <- c("LowerMain_Hexp", "VanIsland_Hexp","HaidaGwai_Hexp","Northwest_Hexp")    # Applying colnames
+head(divallfour)
+str(divallfour)
+
+# turn to dataframe
+dfdivallfour<-as.data.frame(divallfour)
+head(dfdivallfour)
+
+
+### Hexp means + stdev ######
+VanIsland_mean<-mean(dfdivallfour$VanIsland_Hexp) #
+VanIsland_sd<-sd(dfdivallfour$VanIsland_Hexp) #
+
+LowerMain_mean<-mean(dfdivallfour$LowerMain_Hexp) #
+LowerMain_sd<-sd(dfdivallfour$LowerMain_Hexp) #
+
+HaidaGwai_mean<-mean(dfdivallfour$HaidaGwai_Hexp) #
+HaidaGwai_sd<-sd(dfdivallfour$HaidaGwai_Hexp) 
+
+
+Northwest_mean<-mean(dfdivallfour$Northwest_Hexp) #
+Northwest_sd<-sd(dfdivallfour$Northwest_Hexp) 
+
+### save output
+Hetsum<-cbind(VanIsland_mean, VanIsland_sd, LowerMain_mean,LowerMain_sd,HaidaGwai_mean,HaidaGwai_sd,Northwest_mean,Northwest_sd)
+
+#write.table(Hetsum[1,], "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Exp_Het_summary_3regions_601INDIV_173SNPS_maxhetobsasone_nohwe.txt")
+
+
+
+dfdivallfour$locus<-row.names(dfdivallfour)
+head(dfdivallfour)
+
+
+colnames(dfdivallfour) <- c("LowerMain", "VanIsland","HaidaGwai","Northwest","locus")  
+head(dfdivallfour)
+
+### turn wide to long
+df_long <- tidyr::gather(dfdivallfour,
+                         key = Region,
+                         value = Expect_Het,
+                         LowerMain ,  VanIsland ,  HaidaGwai,Northwest)
+
+head(df_long)
+dim(df_long)
+
+df_long_Hexp<-df_long
+head(df_long_Hexp)
+
+
+########## H obs #####
+
+#### genind dartR from genligght ####
+genind.toad.nosibs.hwe.FIS<-dartR::gl2gi(gl.toad.nosibs.hwe.FIS, probar = FALSE, verbose = NULL)
+genind.toad.nosibs.hwe.FIS
+""
+
+pop(genind.toad.nosibs.hwe.FIS)<-pop.data$fourclusters
+pop(genind.toad.nosibs.hwe.FIS)
+
+### check ###
+
+
+#### heirfstat conversion from genind ########
+hierf.toad.nosibs.hwe.FIS<-genind2hierfstat(genind.toad.nosibs.hwe.FIS)
+
+#hierf.toad.nosibs.hwe.FIS<-genind2hierfstat(genind.toad.nosibs.hwe.FIS,pop=TRUE)
+#hierf.toad.nosibs.hwe.FIS$pop<-pop.data$pop
+
+hierf.toad.nosibs.hwe.FISbasic<-basic.stats(hierf.toad.nosibs.hwe.FIS)
+
+hierf.toad.nosibs.hwe.FISbasic$Ho
+
+head(hierf.toad.nosibs.hwe.FISbasic$Ho)
+
+Hodf<-as.data.frame(hierf.toad.nosibs.hwe.FISbasic$Ho)
+
+Hodf$locus<-row.names(Hodf)
+
+head(Hodf)
+
+Hodf$locus<- sub( 'X', '', sub( '\\.', '\\/', sub( '\\.', '-', sub( '\\.', ':', Hodf$locus))))
+
+head(Hodf)
+
+## rename 
+colnames(Hodf) <- c("VanIsland_Hobs", "LowerMain_Hobs","HaidaGwai_Hobs","Northwest_Hobs","locus")  
+head(Hodf)
+
+
+colnames(Hodf) <- c("VanIsland", "LowerMain","HaidaGwai","Northwest","locus")  
+head(Hodf)
+
+### turn wide to long
+df_long_Hobs <- tidyr::gather(Hodf,
+                              key = Region,
+                              value = Obs_Het,
+                              VanIsland ,  LowerMain ,  HaidaGwai,Northwest)
+
+head(df_long_Hobs)
+dim(df_long_Hobs)
+
+
+######### join Hobs and Hexp ####
+
+Ho_He_df<-merge(x = df_long_Hobs, y = df_long_Hexp, by = c("locus","Region"), all = TRUE)
+
+dim(Ho_He_df) # 360
+
+head(Ho_He_df)
+#View(Ho_He_df)
+
+plot(Ho_He_df$Expect_Het,Ho_He_df$Obs_Het)
+
+## rename regions
+
+labels <- c(VanIsland = "Vancouver Island", LowerMain = "Lower mainland",HaidaGwai="Haida Gwaii",Northwest= "Northwest BC")
+
+p<-ggplot(Ho_He_df, aes(x=Expect_Het, y=Obs_Het,fill=Region)) +
+  #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
+  geom_point()+
+  facet_grid(Region ~ .,labeller=labeller(Region = labels))+
+  theme_bw()+
+  scale_color_manual(values=c("#E69F00", "#56B4E9","#009E73","pink"),
+                     name="Region", breaks = c("VanIsland","LowerMain", "HaidaGwai","Northwest"), labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))
+xlab("Expected heterozygosity") + 
+  ylab("Observed heterozygosity")+
+  theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 16), title = element_text(size = 16))
+# scale_x_discrete(labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))+
+# ylim(0,1)
+p<-p+theme(legend.position = "none")
+p
+
+
+
+## save
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/He_vs_Ho_per_region_419INDIV_1367SNPS_maxhetobs0.6asone.png", width = 8, height = 6.5, units = 'in', res = 600)
+p<-ggplot(Ho_He_df, aes(x=Expect_Het, y=Obs_Het,fill=Region)) +
+  #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
+  geom_point()+
+  facet_grid(Region ~ .,labeller=labeller(Region = labels))+
+  theme_bw()+
+  scale_fill_manual(values=c( "#E69F00","#56B4E9","#009E73","pink"),name = "Region", labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))+
+  xlab("Expected heterozygosity") + 
+  ylab("Observed heterozygosity")+
+  theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 16), title = element_text(size = 16))
+# scale_x_discrete(labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))+
+# ylim(0,1)
+p<-p+theme(legend.position = "none")
+p
+dev.off()
+
+
+
+## just Ho
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Ho_per_region_419INDIV_1367SNPS_maxhetobs0.6asone.png", width = 8, height = 6.5, units = 'in', res = 600)
+p<-ggplot(Ho_He_df, aes(x=Region, y=Obs_Het,fill=Region)) +
+  #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
+  geom_boxplot()+
+  theme_bw()+
+  scale_fill_manual(values=c( "#E69F00","#56B4E9","#009E73","pink"),name = "Region", labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))+
+  xlab("Region") + 
+  ylab("Observed heterozygosity")+
+  theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 16), title = element_text(size = 16))+
+  scale_x_discrete(labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))+
+  ylim(0,1)
+p<-p+theme(legend.position = "none")
+p
+dev.off()
+
+# just He
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/He_per_region_419INDIV_1367SNPS_maxhetobs0.6asone.png", width = 8, height = 6.5, units = 'in', res = 600)
+p<-ggplot(Ho_He_df, aes(x=Region, y=Expect_Het,fill=Region)) +
+  #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
+  geom_boxplot()+
+  theme_bw()+
+  scale_fill_manual(values=c( "#E69F00","#56B4E9","#009E73","pink"),name = "Region", labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))+
+  xlab("Region") + 
+  ylab("Expected heterozygosity")+
+  theme(axis.title = element_text(face = "bold"), axis.text = element_text(size = 16), title = element_text(size = 16))+
+  scale_x_discrete(labels=c("Vancouver Island", "Lower mainland", "Haida Gwaii", "Northwest BC"))+
+  ylim(0,1)
+p<-p+theme(legend.position = "none")
+p
+dev.off()
 
 
 
@@ -3013,7 +3321,7 @@ ggplot(df_longHobs, aes(x=Region, y=Obs_Het, fill=Region)) +
   ylim(0,1)
 
 ## save
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_obs_Het_per_region_766INDIV_1503SNPS_hwe44pops_FISperpond0.1.png", width = 8, height = 6.5, units = 'in', res = 600)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_obs_Het_per_region_419NDIV_1367SNPS_hwe44pops_FISperpond0.1.png", width = 8, height = 6.5, units = 'in', res = 600)
 p<-ggplot(df_longHobs, aes(x=Region, y=Obs_Het, fill=Region)) +
   #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
   geom_boxplot()+
@@ -3029,7 +3337,7 @@ p
 dev.off()
 
 ## save
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_obs_Het_per_region_766INDIV_1503SNPS_hwe44pops_FISperpond0.1_noylim.png", width = 8, height = 6.5, units = 'in', res = 600)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_obs_Het_per_region_419NDIV_1367SNPS_hwe44pops_FISperpond0.1_noylim.png", width = 8, height = 6.5, units = 'in', res = 600)
 p<-ggplot(df_longHobs, aes(x=Region, y=Obs_Het, fill=Region)) +
   #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
   geom_boxplot()+
@@ -3085,7 +3393,7 @@ HaidaGwai_sd<-sd(dfdivallthree$HaidaGwai_Hexp)
 ### save output
 Hetsum<-cbind(VanIsland_mean, VanIsland_sd, LowerMain_mean,LowerMain_sd,HaidaGwai_mean,HaidaGwai_sd)
 
-write.table(Hetsum[1,], "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Exp_Het_summary_3regions_766INDIV_1503SNPS_hwe44pops_FISperpond0.1.txt")
+write.table(Hetsum[1,], "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Exp_Het_summary_3regions_419NDIV_1367SNPS_hwe44pops_FISperpond0.1.txt")
 
 
 
@@ -3122,7 +3430,7 @@ p
 
 
 ## save
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_expect_Het_per_region_766INDIV_1503SNPS_hwe44pops_FISperpond0.1.png", width = 8, height = 6.5, units = 'in', res = 600)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_expect_Het_per_region_419NDIV_1367SNPS_hwe44pops_FISperpond0.1.png", width = 8, height = 6.5, units = 'in', res = 600)
 p<-ggplot(df_long, aes(x=Region, y=Expect_Het, fill=Region)) +
   #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
   geom_boxplot()+
@@ -3138,7 +3446,7 @@ p
 dev.off()
 
 ## save no ylim
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_expect_Het_per_region_766INDIV_1503SNPS_hwe44pops_FISperpond0.1_noylim.png", width = 8, height = 6.5, units = 'in', res = 600)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Boxplot_expect_Het_per_region_419NDIV_1367SNPS_hwe44pops_FISperpond0.1_noylim.png", width = 8, height = 6.5, units = 'in', res = 600)
 p<-ggplot(df_long, aes(x=Region, y=Expect_Het, fill=Region)) +
   #stat_boxplot(geom ='errorbar') +  # horizontal whiskers
   geom_boxplot()+
@@ -3181,12 +3489,12 @@ exphet_SEdf
 exphet_SEdf$Region<- factor(exphet_SEdf$Region, levels = c("VanIsland_Hexp", "LowerMain_Hexp", "HaidaGwai_Hexp"))
 exphet_SEdf<- droplevels(exphet_SEdf)
 
-write.csv(exphet_SEdf,"F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Exphet_mean_sd_SE_CI_MOE_766INDIV_1503SNPS_hwe44pops_FISperpond0.1.csv")
+write.csv(exphet_SEdf,"F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Exphet_mean_sd_SE_CI_MOE_419NDIV_1367SNPS_hwe44pops_FISperpond0.1.csv")
 
 
 
 ### NEW COL
-ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Exphet_95pctCI_MOE_766INDIV_1503SNPS_hwe44pops_FISperpond0.1_orange_correctCI.pdf",  bg = "transparent",width =200, height = 180, units = c("mm"))
+ggsave(file="F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Diversity/Exphet_95pctCI_MOE_419NDIV_1367SNPS_hwe44pops_FISperpond0.1_orange_correctCI.pdf",  bg = "transparent",width =200, height = 180, units = c("mm"))
 p<-ggplot(exphet_SEdf, aes(x = Region, color = Region, y=mean)) +
   geom_point(size = 8)+
   theme_classic() +
@@ -3839,7 +4147,7 @@ plot(tre, typ="fan", cex=0.7)
 #colour 4clusters
 pop(gl.toad.nosibs.hwe.FIS) <- pop.data$fourclusters
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/NJTREE/NJTREE_col4clusters_766INDIV_1503SNPS.png", width = 6.5, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/NJTREE/NJTREE_col4clusters_419NDIV_1367SNPS.png", width = 6.5, height = 6.5, units = 'in', res = 300)
 plot(tre, typ="fan", show.tip=TRUE, cex=0.5)
 tiplabels(pch=20, col=brewer.pal(10, "Paired")[gl.toad.nosibs.hwe.FIS$pop], cex=4)
 #title("NJ tree of Western toads for the 20 test samples/n colour from subregion/n denovo test 20 samples rm sibs gapped 0.9 M3 rm sibs fitlering may 11th")
@@ -3876,7 +4184,7 @@ grp <- find.clusters(gl.toad.nosibs.hwe.FIS, max.n.clust=26)
 
 
 # save variance explained PC plot
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_varianceexplainedbyPCA_findclusters_maxclusters26_766INDIV_1503SNPS.png")
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_varianceexplainedbyPCA_findclusters_maxclusters26_419NDIV_1367SNPS.png")
 
 
 
@@ -3887,7 +4195,7 @@ png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_
 
 # save BIC plot
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_BIC_findclusters_maxclusters26_200PCs_766INDIV_1503SNPS.png")
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_BIC_findclusters_maxclusters26_200PCs_419NDIV_1367SNPS.png")
 
 
 
@@ -3897,7 +4205,7 @@ png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_
 grp$grp
 
 # saving cluster allocation
-write.csv(grp$grp, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_3clusters_766INDIV_1503SNPS.csv")
+write.csv(grp$grp, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_3clusters_419NDIV_1367SNPS.csv")
 
 
 
@@ -3917,7 +4225,7 @@ grp <- find.clusters(gl.toad.nosibs.hwe.FIS, max.n.clust=26)
 grp$grp
 
 # saving cluster allocation
-write.csv(grp$grp, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_2clusters_766INDIV_1503SNPS.csv")
+write.csv(grp$grp, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_2clusters_419NDIV_1367SNPS.csv")
 
 
 
@@ -3937,7 +4245,7 @@ grp <- find.clusters(gl.toad.nosibs.hwe.FIS, max.n.clust=26)
 grp$grp
 
 # saving cluster allocation
-write.csv(grp$grp, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_4clusters_766INDIV_1503SNPS.csv")
+write.csv(grp$grp, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_4clusters_419NDIV_1367SNPS.csv")
 
 
 
@@ -3948,7 +4256,7 @@ write.csv(grp$grp, file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minma
 
 
 
-clustass4clusters<-read.csv( file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_4clusters_766INDIV_1503SNPS.csv")
+clustass4clusters<-read.csv( file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_4clusters_419NDIV_1367SNPS.csv")
 
 
 
@@ -4019,7 +4327,7 @@ scatter(pnw.dapc2, cex = 2, legend = TRUE, clabel = F,
 
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_766INDIV_1503SNPS_optimal_23PCaxes_defaultcols.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_419NDIV_1367SNPS_optimal_23PCaxes_defaultcols.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc2, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75)
@@ -4043,13 +4351,13 @@ labs <- c("Chikundal", "Gudal Lake","Gwaii Haanas","Northern Haida Gwaii")
 cols=c("#58d19f","pink","#0072B2", "#D55E00" )
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_766INDIV_1503SNPS_optimal_23PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_419NDIV_1367SNPS_optimal_23PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc2, col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
 dev.off()
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_766INDIV_1503SNPS_200PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_419NDIV_1367SNPS_200PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc, col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
@@ -4063,14 +4371,14 @@ highdapc <- dapc(gl.toad.nosibs.hwe.FIS, parallel = require("parallel"), n.da = 
 
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_766INDIV_1503SNPS_80pctPCs_defaultcols.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_419NDIV_1367SNPS_80pctPCs_defaultcols.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(highdapc, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75)
 dev.off()
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_766INDIV_1503SNPS_80pctPCs.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_4_clusters_419NDIV_1367SNPS_80pctPCs.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(highdapc, col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
@@ -4084,7 +4392,7 @@ dev.off()
 set.seed(4)
 contrib <- loadingplot(pnw.dapc2$var.contr, axis = 2, thres = 0.02, lab.jitter = 1)
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_loadings_col_4_clusters_766INDIV_1503SNPS_optimal_23PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_loadings_col_4_clusters_419NDIV_1367SNPS_optimal_23PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
 contrib <- loadingplot(pnw.dapc2$var.contr, axis = 2, thres = 0.02, lab.jitter = 1)
 dev.off()
 
@@ -4114,7 +4422,7 @@ colnames(dapc.results) <- c("Original_Pop","Sample",
 
 
 ###### no sep areas 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_766INDIV_1503SNPS_optimalPC_23PCaxes_nosepareas.png", width = 12, height = 3, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_419NDIV_1367SNPS_optimalPC_23PCaxes_nosepareas.png", width = 12, height = 3, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + theme(axis.text.x = element_blank(),axis.title.y = element_text( size = 10),axis.ticks.x = element_blank(),panel.background = element_blank())
@@ -4125,7 +4433,7 @@ dev.off()
 
 
 # with sample id
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_766INDIV_1503SNPS_optimalPC_23PCaxes_nosepareas_sampleid.png", width = 12, height = 3, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_419NDIV_1367SNPS_optimalPC_23PCaxes_nosepareas_sampleid.png", width = 12, height = 3, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + theme(axis.text.x = element_text(angle = 90, size = 2,vjust=0.2),axis.title.y = element_text( size = 8))
@@ -4155,7 +4463,7 @@ pop(gl.toad.nosibs.hwe.FIS)<-pop.data4clusters$fourclusters200pcaNAMES
 supp.labs <- c( Gwaii_Haanas=" Gwaii Haanas (original pop)",Chikundal="Chikundal (original pops)",Northern_Haida_Gwaii="Northern Haida Gwaii (original pop)",Gudal_Lake ="Gudal Lake (original pop)")
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_766INDIV_1503SNPS_optimalPC_23PCaxes_4originalareas.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_419NDIV_1367SNPS_optimalPC_23PCaxes_4originalareas.png", width = 12, height = 6.5, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + facet_grid(~Original_Pop, scales = "free",  labeller = labeller(Original_Pop = supp.labs))
@@ -4179,7 +4487,7 @@ pop(gl.toad.nosibs.hwe.FIS)<-pop.data4clusters$two_areas
 supp.labs <- c( Gwaii_Haanas=" Gwaii Haanas (original pop)",Northern_HaidaGwaii="Northern Haida Gwaii (original pop)")
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_766INDIV_1503SNPS_optimalPC_23PCaxes_2originalareas.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_419NDIV_1367SNPS_optimalPC_23PCaxes_2originalareas.png", width = 12, height = 6.5, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + facet_grid(~Original_Pop, scales = "free",  labeller = labeller(Original_Pop = supp.labs))
@@ -4200,7 +4508,7 @@ dev.off()
 
 
 
-clustass3clusters<-read.csv( file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_3clusters_766INDIV_1503SNPS.csv")
+clustass3clusters<-read.csv( file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_3clusters_419NDIV_1367SNPS.csv")
 dim(clustass3clusters)
 dim(pop.data)
 
@@ -4270,7 +4578,7 @@ scatter(pnw.dapc2, cex = 2, legend = TRUE, clabel = F,
 
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_766INDIV_1503SNPS_optimal_24PCaxes_defaultcols.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_419NDIV_1367SNPS_optimal_24PCaxes_defaultcols.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc2, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75)
@@ -4296,13 +4604,13 @@ cols=c("pink","#0072B2", "#D55E00" )
 
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_766INDIV_1503SNPS_optimal_24PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_419NDIV_1367SNPS_optimal_24PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc2, col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
 dev.off()
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_766INDIV_1503SNPS_200PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_419NDIV_1367SNPS_200PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc,col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
@@ -4315,7 +4623,7 @@ dev.off()
 highdapc <- dapc(gl.toad.nosibs.hwe.FIS, parallel = require("parallel"), n.da = 10, pca.select = "percVar", perc.pca=80)
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_766INDIV_1503SNPS_80pctPCs.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_3_clusters_419NDIV_1367SNPS_80pctPCs.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(highdapc,col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
@@ -4329,7 +4637,7 @@ dev.off()
 set.seed(4)
 contrib <- loadingplot(pnw.dapc2$var.contr, axis = 2, thres = 0.02, lab.jitter = 1)
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_loadings_col_3_clusters_766INDIV_1503SNPS_optimal_24PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_loadings_col_3_clusters_419NDIV_1367SNPS_optimal_24PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
 contrib <- loadingplot(pnw.dapc2$var.contr, axis = 2, thres = 0.02, lab.jitter = 1)
 dev.off()
 
@@ -4361,7 +4669,7 @@ colnames(dapc.results) <- c("Original_Pop","Sample",
                             "Assigned_Pop","Posterior_membership_probability")
 
 ###### no sep areas 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_3_clusters_766INDIV_1503SNPS_optimalPC_24PCaxes_nosepareas.png", width = 12, height = 3, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_3_clusters_419NDIV_1367SNPS_optimalPC_24PCaxes_nosepareas.png", width = 12, height = 3, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + theme(axis.text.x = element_blank(),axis.title.y = element_text( size = 10),axis.ticks.x = element_blank(),panel.background = element_blank())
@@ -4372,7 +4680,7 @@ dev.off()
 
 
 # with sample id
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_3_clusters_766INDIV_1503SNPS_optimalPC_24PCaxes_nosepareas_sampleid.png", width = 12, height = 3, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_3_clusters_419NDIV_1367SNPS_optimalPC_24PCaxes_nosepareas_sampleid.png", width = 12, height = 3, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + theme(axis.text.x = element_text(angle = 90, size = 3),axis.title.y = element_text( size = 8))
@@ -4392,7 +4700,7 @@ pop(gl.toad.nosibs.hwe.FIS)<-pop.data4clusters$fourclusters200pcaNAMES
 supp.labs <- c( Gwaii_Haanas=" Gwaii Haanas (original pop)",Chikundal="Chikundal (original pops)",Northern_Haida_Gwaii="Northern Haida Gwaii (original pop)",Gudal_Lake ="Gudal Lake (original pop)")
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_766INDIV_1503SNPS_optimalPC_24PCaxes_4originalareas.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_4_clusters_419NDIV_1367SNPS_optimalPC_24PCaxes_4originalareas.png", width = 12, height = 6.5, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + facet_grid(~Original_Pop, scales = "free",  labeller = labeller(Original_Pop = supp.labs))
@@ -4415,7 +4723,7 @@ pop(gl.toad.nosibs.hwe.FIS)<-pop.data3clusters$two_areas
 supp.labs <- c( Gwaii_Haanas=" Gwaii Haanas (original pop)",Northern_HaidaGwaii="Northern Haida Gwaii (original pop)")
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_3_clusters_766INDIV_1503SNPS_optimalPC_24PCaxes_2originalareas.png", width = 12, height = 3, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_3_clusters_419NDIV_1367SNPS_optimalPC_24PCaxes_2originalareas.png", width = 12, height = 3, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + facet_grid(~Original_Pop, scales = "free",  labeller = labeller(Original_Pop = supp.labs))
@@ -4439,7 +4747,7 @@ dev.off()
 
 
 
-clustass2clusters<-read.csv( file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_2clusters_766INDIV_1503SNPS.csv")
+clustass2clusters<-read.csv( file = "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/clustRumAssign_findclusters_maxclusters26_200PCs_2clusters_419NDIV_1367SNPS.csv")
 
 
 
@@ -4516,13 +4824,13 @@ cols=c("#009E73","#E69F00" )
 
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_2_clusters_766INDIV_1503SNPSSNPS_optimal_1PCaxis.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_2_clusters_419NDIV_1367SNPSSNPS_optimal_1PCaxis.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc2, col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
 dev.off()
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_2_clusters_766INDIV_1503SNPSSNPS_200PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_2_clusters_419NDIV_1367SNPSSNPS_200PCaxes.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(pnw.dapc,col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
@@ -4535,7 +4843,7 @@ dev.off()
 highdapc <- dapc(gl.toad.nosibs.hwe.FIS, parallel = require("parallel"), n.da = 10, pca.select = "percVar", perc.pca=80)
 
 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_2_clusters_766INDIV_1503SNPSSNPS_80pctPCs.png", width = 12, height = 6.5, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/DAPC_col_2_clusters_419NDIV_1367SNPSSNPS_80pctPCs.png", width = 12, height = 6.5, units = 'in', res = 300)
 scatter(highdapc,col = cols, cex = 2, legend = TRUE, clabel = F, 
         posi.leg = "bottomleft", scree.pca = T,posi.da = "bottomright",
         posi.pca = "topright", cleg = 0.75,txt.leg =labs)
@@ -4557,7 +4865,7 @@ colnames(dapc.results) <- c("Original_Pop","Sample",
 
 
 ###### no sep areas 
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_2_clusters_766INDIV_1503SNPS_optimalPC_1PCaxis_nosepareas.png", width = 12, height = 3, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_2_clusters_419NDIV_1367SNPS_optimalPC_1PCaxis_nosepareas.png", width = 12, height = 3, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + theme(axis.text.x = element_blank(),axis.title.y = element_text( size = 10),axis.ticks.x = element_blank(),panel.background = element_blank())
@@ -4568,7 +4876,7 @@ dev.off()
 
 
 # with sample id
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_2_clusters_766INDIV_1503SNPS_optimalPC_1PCaxis_nosepareas_sampleid.png", width = 12, height = 3, units = 'in', res = 300)
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/DAPC/Membershipprob_col_2_clusters_419NDIV_1367SNPS_optimalPC_1PCaxis_nosepareas_sampleid.png", width = 12, height = 3, units = 'in', res = 300)
 t <- ggplot(dapc.results, aes(x=Sample, y=Posterior_membership_probability, fill=Assigned_Pop))
 t <- t + geom_bar(stat='identity') 
 t <- t + theme(axis.text.x = element_text(angle = 90, size = 3),axis.title.y = element_text( size = 8))
