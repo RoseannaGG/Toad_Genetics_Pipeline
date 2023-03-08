@@ -706,7 +706,43 @@ Run Time = 13.00 seconds
 
 "
 
-########### EXPORT 602 INDIV 602 SNPS ###########
+
+
+
+
+
+### singletons gapped0.9_maxhet0.6_singleSNP_mac3_DP3_minGQ20_maf0.05_rmindels_biallelic_rmsibs_missingSNP0.6
+vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003.recode.vcf --singletons --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003
+
+
+
+"
+After filtering, kept 766 out of 766 Individuals
+Outputting Singleton Locations
+After filtering, kept 3496 out of a possible 3496 Sites
+Run Time = 0.00 seconds
+"
+
+#no singletons
+cat populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003.singletons
+CHROM   POS     SINGLETON/DOUBLETON     ALLELE  INDV
+
+
+
+
+#excludes singletons
+#vcftools --vcf $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003.recode.vcf --remove-filtered-all --exclude-positions populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003.singletons --recode --recode-INFO-all --out $src/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003
+
+"
+
+"
+
+
+
+
+
+
+########### EXPORT  ###########
 
 ### populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV30%_maf001 ###
 
@@ -743,6 +779,15 @@ rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembl
 
 
 rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_rmINDIV30%_maf003.recode.vcf roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_listindivmissingSNP_40%missINDV.indv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss_singleSNP_DP3_minGQ20_rmindels_biallelic_missingSNP60%_rmINDIV40%_missingSNP80%_listindivmissingSNP_30%missINDV.indv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/ --progress
+
+
+
+
+
+
+
+
+
 
 
 
