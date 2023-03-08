@@ -789,3 +789,40 @@ Note: No phenotypes present.
 # upload list of ponds kept
 
 rsync -zv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/ponds_kept_766INDIV_3496SNPS.txt roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/ --progress
+
+
+
+###########################################################################
+####### remove sibs from filtered vcf file #############
+#############################################################
+
+module load nixpkgs/16.09  intel/2018.3 vcftools/0.1.14
+src=/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/
+cd /home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/
+
+rsync -zv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/766INDIV_1430SNPS_editlocinamesinR.vcf roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/ --progress
+
+rsync -zv /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Rmsibs/listindiv_plink_sub_sib_rel_over_04_names_unique.indv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/ --progress
+
+
+# remove
+vcftools --vcf 766INDIV_1430SNPS_editlocinamesinR.vcf --remove listindiv_plink_sub_sib_rel_over_04_names_unique.indv --out 510INDIV_1430SNPS_editlocinamesinR_rmsibsvcftools
+
+vcftools --vcf 766INDIV_1430SNPS_editlocinamesinR.vcf --remove listindiv_plink_sub_sib_rel_over_04_names_unique.indv --recode --recode-INFO-all --out 510INDIV_1430SNPS_editlocinamesinR_rmsibsvcftools
+
+
+"VCFtools - 0.1.16
+(C) Adam Auton and Anthony Marcketta 2009
+
+Parameters as interpreted:
+        --vcf 766INDIV_1430SNPS_editlocinamesinR.vcf
+        --remove listindiv_plink_sub_sib_rel_over_04_names_unique.indv
+        --out 510INDIV_1430SNPS_editlocinamesinR_rmsibsvcftools.vcf
+
+Excluding individuals in 'exclude' list
+After filtering, kept 510 out of 766 Individuals
+After filtering, kept 1430 out of a possible 1430 Sites
+Run Time = 5.00 seconds
+"
+
+rsync -zv roseanna@cedar.computecanada.ca:/home/roseanna/scratch/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/510INDIV_1430SNPS_editlocinamesinR_rmsibsvcftools.recode.vcf /drives/f/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/ --progress
