@@ -167,7 +167,17 @@ populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq2
   
   ## 10b. Export vcf file and missing individual files to desktop
   
+
+   ##E filter out high obs het 
+
+    - per region 0.6
+   - R
   
+    ### Fitler out siblings 0.2 full sibs and half sibs (if just full sibs 0.4 or 0.35)
+  
+  - plink and R
+  - using 0.4 threshold
+
   ### Fitler SNPs out of HWE 0.01
   
   - Per region, averaged across each locus
@@ -180,9 +190,7 @@ populations -P $src/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq2
   - R
 
 
-    ### Fitler out siblings 0.2 full sibs and half sibs (if just full sibs 0.4 or 0.35)
-  
-  - R SNPrelate OR COLONY or plink
+
   
   ## ANALYSIS ON WHOLE DATASET
   
