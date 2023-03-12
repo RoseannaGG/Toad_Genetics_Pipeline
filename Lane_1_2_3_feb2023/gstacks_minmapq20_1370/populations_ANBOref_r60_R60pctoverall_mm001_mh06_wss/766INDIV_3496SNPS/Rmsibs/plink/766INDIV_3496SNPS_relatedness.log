@@ -1,0 +1,33 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --allow-extra-chr
+  --file 766INDIV_3496SNPS
+  --make-rel square
+  --out 766INDIV_3496SNPS_relatedness
+
+Hostname: cedar5.cedar.computecanada.ca
+Working directory: /scratch/roseanna/ANBO_refassembly_HGthesis_lane1_lane2_lane3/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss
+Start time: Sat Mar  4 19:54:03 2023
+
+Random number seed: 1677988443
+257860 MB RAM detected; reserving 128930 MB for main workspace.
+Allocated 7259 MB successfully, after larger attempt(s) failed.
+Scanning .ped file... done.
+Performing single-pass .bed write (3496 variants, 766 people).
+--file: 766INDIV_3496SNPS_relatedness-temporary.bed +
+766INDIV_3496SNPS_relatedness-temporary.bim +
+766INDIV_3496SNPS_relatedness-temporary.fam written.
+3496 variants loaded from .bim file.
+766 people (0 males, 0 females, 766 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to 766INDIV_3496SNPS_relatedness.nosex .
+Using up to 63 threads (change this with --threads).
+Before main variant filters, 766 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.869599.
+3496 variants and 766 people pass filters and QC.
+Note: No phenotypes present.
+Relationship matrix calculation complete.
+Relationship matrix written to 766INDIV_3496SNPS_relatedness.rel , and IDs
+written to 766INDIV_3496SNPS_relatedness.rel.id .
+
+End time: Sat Mar  4 19:54:03 2023
