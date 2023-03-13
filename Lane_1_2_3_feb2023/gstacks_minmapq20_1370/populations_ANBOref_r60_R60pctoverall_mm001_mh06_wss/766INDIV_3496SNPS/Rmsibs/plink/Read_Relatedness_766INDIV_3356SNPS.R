@@ -66,13 +66,37 @@ sub_sibrelover035_names.char<-as.character(sub_sibrelover035_names)
 str(sub_sibrelover035_names.char) #chr [1:3645]
 
 
-#deletes the repeats --- gives list of individuals to remove that I can feed back into vcf tools
+#deletes the repeats --- gives list of individuals to remove that I can feed back into R to remove
 sub_sibrelover035_names_unique<-unique(sub_sibrelover035_names)
 str(sub_sibrelover035_names_unique) 
 
 sub_sibrelover035_names_unique.char<-as.character(sub_sibrelover035_names_unique)
-str(sub_sibrelover035_names_unique.char) #chr [1:497] 
-(497/766)*100
+str(sub_sibrelover035_names_unique.char) #chr [1:477] 
+(477/766)*100 #62.27154
+766-477 # 289
+
+
+
+### subset data that is being kept
+pop.data_289<-pop.data[which(!pop.data$sample.id %in% sub_sibrelover035_names_unique.char),]
+dim(pop.data_289) # 289   7
+levels(pop.data_289$pop)
+
+#check number of ponds
+pop.data_289_2<-pop.data_289
+pop.data_289_2$pop<-as.factor(pop.data_289_2$pop)
+
+levels(pop.data_289_2$pop) # 44
+
+# lost these populations
+# "R01-SI-LL"
+# "R02-SC-HA"
+# "R02-SS-KH"
+
+
+
+
+
 
 
 
@@ -144,16 +168,22 @@ dim(sibrelover04_onlynomatchindiv)  #1031
   sub_sibrelover04_names.char<-as.character(sub_sibrelover04_names)
   str(sub_sibrelover04_names.char) #chr [1:1031]
   
-  #deletes the repeats --- gives list of individuals to remove that I can feed back into vcf tools
+  #deletes the repeats --- gives list of individuals to remove that I can feed back into into R to remove
   sub_sibrelover04_names_unique<-unique(sub_sibrelover04_names)
   str(sub_sibrelover04_names_unique) 
   
   sub_sibrelover04_names_unique.char<-as.character(sub_sibrelover04_names_unique)
   str(sub_sibrelover04_names_unique.char) #chr [1:256]
   
-  (256/766)*100 = 33.42037
+  (256/766)*100 # 33.42037
+  766-256 # 510
   
+  dim(pop.data.766)
   
+  ### subset data that is being kept
+  pop.data_510<-pop.data.766[which(!pop.data.766$sample.id %in% sub_sibrelover04_names_unique.char),]
+  dim(pop.data_510) # 510   7
+
   write.table(sub_sibrelover04_names_unique.char, "F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Rmsibs/766INDIV_3356SNPS_listindiv_plink_sub_sib_rel_over_04_names_unique.char.txt", row.names = FALSE, col.names = FALSE,quote=FALSE )
   
   
