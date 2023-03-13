@@ -56,6 +56,37 @@ chkfilt <- do.call("rbind", chk)
 histprefilt <- ggplot(randreldf[[nam]], aes(x=value))+geom_histogram(color="black", fill="white")
 ggsave(file=paste(outputwd, "/", nam, "_presibfilt_hist.png", sep=""), histprefilt, width=10, height=8, units="in")
 
+## my code
+
+# make dataframe
+sibdataframe_766_3356<-randreldf[[nam]]
+str(sibdataframe_766_3356)
+dim(sibdataframe_766_3356) # 293761      3
+
+# delete match of individuals
+sibdataframe_766_3356_onlynomatchindiv<-subset(sibdataframe_766_3356, Var1!=Var2)
+dim(sibdataframe_766_3356_onlynomatchindiv) #292995      3
+
+# subset to just ponds
+sub_sibdataframe_766_3356_onlynomatchindiv = sibdataframe_766_3356_onlynomatchindiv[substr(sibdataframe_766_3356_onlynomatchindiv$Var1,1,9)==substr(sibdataframe_766_3356_onlynomatchindiv$Var2,1,9),]
+dim(sub_sibdataframe_766_3356_onlynomatchindiv) #7240    3
+head(sub_sibdataframe_766_3356_onlynomatchindiv)
+
+# histprefilt_withinponds
+histprefilt_withinponds<-ggplot(sub_sibdataframe_766_3356_onlynomatchindiv, aes(x=value))+geom_histogram(color="black", fill="white")
+dev.off()
+ggsave(file=paste(outputwd, "/", nam, "_presibfilt_WITHINPONDS_hist.png", sep=""), histprefilt_withinponds, width=10, height=8, units="in")
+
+# basic R plotting
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/Rmsibs/sibHist_wihtinponds_766INDIV_3356SNPS.png", width = 8, height = 6.5, units = 'in', res = 300)
+hist(sub_sibdataframe_766_3356_onlynomatchindiv$value,breaks=seq(0,1.3,l=50), main="Relatedness within ponds only",
+    # ylim = c(0, 1500),
+     xlab="Relatedness - higher => more related (over 0.4 -  full sibs or more) ",
+     ylab="Frequency")
+dev.off()
+
+# one column
+sub_sibdataframe_766_3356_onlynomatchindiv_onecol<-sub_sibdataframe_766_3356_onlynomatchindiv[,2:3]
 
 
 #### MY CODE
@@ -99,5 +130,9 @@ head(sub_sibrelover035_names_unique.char)
 
 # HIST
 histprefilt2 <- ggplot(sub_sibrelover035_onlynomatchindiv, aes(x=value))+geom_histogram(color="black", fill="white")
-ggsave(file=paste(outputwd, "/", nam, "_take2_presibfilt_hist.png", sep=""), histprefilt2, width=10, height=8, units="in")
+ggsave(file=paste(outputwd, "/", nam, "_take035_presibfilt_hist.png", sep=""), histprefilt2, width=10, height=8, units="in")
+
+
+
+
 

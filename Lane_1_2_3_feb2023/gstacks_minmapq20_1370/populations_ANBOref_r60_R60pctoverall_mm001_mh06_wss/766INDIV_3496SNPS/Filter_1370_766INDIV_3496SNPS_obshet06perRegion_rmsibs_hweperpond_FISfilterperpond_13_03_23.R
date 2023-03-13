@@ -156,11 +156,12 @@ head(mafvcf_766INDIV_3496SNPS.df)
 
 par(mar=c(4,4,4,4))
 
-
-png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_766INDIV_3496SNPS_2.png", width = 8, height = 6.5, units = 'in', res = 300)
-hist(mafvcf_766INDIV_3496SNPS.df$Frequency,breaks=seq(0,0.5,l=50), main="MAF metapop",
+# MAFplot_766INDIV_3496SNPS_2
+png("F:/GBS_data_03_02_21/Lane_1_2_3_feb2023/gstacks_minmapq20_1370/populations_ANBOref_r60_R60pctoverall_mm001_mh06_wss/766INDIV_3496SNPS/MAFplot_766INDIV_3496SNPS_maf.png", width = 8, height = 6.5, units = 'in', res = 300)
+hist(mafvcf_766INDIV_3496SNPS.df$Frequency,breaks=seq(0,1,l=50), main="MAF whole population vcf file maf()",
      xlab="Minor allele frequency",
-     ylab="Frequency")
+     ylab="Frequency",
+     xlim=(0,3500))
 dev.off()
 
 
@@ -930,9 +931,9 @@ Object size: 56.3 Mb
 str(Hodf.filt.OBSHET_loci) # chr [1:3356]
 
 # SUBSET TO KEEP JUST LOCI IN THIS LIST
-VCFfiletest_sub<-subset(VCFfiletest, VCFfiletest@fix[,'ID'] %in% Hodf.filt.OBSHET_loci)
+VCF.obshet06perregionR<-subset(VCFfiletest, VCFfiletest@fix[,'ID'] %in% Hodf.filt.OBSHET_loci)
 
-VCFfiletest_sub
+VCF.obshet06perregionR
 
 "***** Object of Class vcfR *****
 766 samples
@@ -942,7 +943,7 @@ Object size: 52.8 Mb
 0 percent missing data
 *****        *****         *****"
 
-VCF.obshet06perregionR<-VCFfiletest_sub
+VCF.obshet06perregionR
 
 
 
@@ -1134,9 +1135,40 @@ pop.data2$pop<-as.factor(pop.data2$pop)
 levels(pop.data2$pop)
 
 ponds_kept_510INDIV_3496SNPS<-levels(pop.data2$pop)
+ponds_kept_510INDIV_3496SNPS
 
 
+### try 0.35 threshold
 
+sub_sibrelover035_names_unique.char
+
+listsibs035<-sub_sibrelover035_names_unique.char
+str(sub_sibrelover035_names_unique.char)
+
+# function alba made to remove siblings
+source("F:/GBS_data_03_02_21/Function_only_remove_siblings_genlight_Alba_nov_8th_2021.R")
+
+# run function
+gl.toad.obshetPerregion.nosibs035<- remove_sibs_genlight(genlight_object = gl.toad.obshetPerregion,
+                                                      names = listsibs035)
+gl.toad.obshetPerregion.nosibs035
+
+" /// GENLIGHT OBJECT /////////
+
+ // 289 genotypes,  3,356 binary SNPs, size: 1.8 Mb
+ 162867 (16.79 %) missing data
+
+ // Basic content
+   @gen: list of 289 SNPbin
+   @ploidy: ploidy of each individual  (range: 2-2)
+
+ // Optional content
+   @ind.names:  289 individual labels
+   @loc.names:  3356 locus labels
+   @chromosome: factor storing chromosomes of the SNPs
+   @position: integer storing positions of the SNPs
+   @pop: population of each individual (group size range: 31-122)
+   @other: a list containing: elements without names "
 
 #######################
 ## HWE filtering per pond p=0.01 ####
